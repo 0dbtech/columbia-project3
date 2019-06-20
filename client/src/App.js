@@ -14,6 +14,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>client/src/App.js</code> and save to reload.  
         </p>
+        <h2>React Search component should be below this</h2>
         <SearchComponent></SearchComponent>
       </div>
     );
