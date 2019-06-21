@@ -1,18 +1,22 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import HeaderComponent from "./components/Header/header"
+import MapComponent from "./components/Map/map"
+import DogComponent from "./components/Dog/dog"
+import CarouselComponent from "./components/Carousel/carousel"
+import ShelterComponent from "./components/Shelter/shelter"
+import FooterComponent from "./components/Footer/footer"
 
+import './App.css';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Paw Pal | Heroku Deployment Template</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>client/src/App.js</code> and save to reload.  
-        </p>
+      <div>
+        <HeaderComponent></HeaderComponent>
+        <MapComponent></MapComponent>
+        <DogComponent></DogComponent>
+        <CarouselComponent></CarouselComponent>
+        <ShelterComponent></ShelterComponent>
+        <FooterComponent></FooterComponent>
       </div>
     );
   }
