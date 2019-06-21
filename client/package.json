@@ -4,10 +4,9 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
-    "express": "^4.17.1",
-    "if-env": "^1.0.4",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
+    "react-router": "^5.0.1",
     "react-scripts": "^2.1.1"
   },
   "scripts": {

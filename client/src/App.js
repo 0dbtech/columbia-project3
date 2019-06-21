@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import SearchComponent from "./components/Search";
+import FooterComponent from "./components/Footer";
 
 class App extends Component {
   render() {
@@ -16,6 +17,8 @@ class App extends Component {
         </p>
         <h2>React Search component should be below this</h2>
         <SearchComponent></SearchComponent>
+        
+        <FooterComponent></FooterComponent>
       </div>
     );
   }

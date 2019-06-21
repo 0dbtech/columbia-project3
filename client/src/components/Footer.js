@@ -4,7 +4,7 @@ function FooterComponent() {
     return (
         <footer style={footerStyle} class="footer">
         <div class="container">
-          <span class="text-muted">Place sticky footer content here.</span>
+          <span class="text-muted">Place sticky footer content here. TEST DEPLOY 1 2 3</span>
         </div>
       </footer>
     );
