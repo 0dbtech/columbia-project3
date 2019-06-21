@@ -1,0 +1,88 @@
+# ************************************************************
+# Sequel Pro SQL dump
+# Version 4541
+#
+# http://www.sequelpro.com/
+# https://github.com/sequelpro/sequelpro
+#
+# Host: 127.0.0.1 (MySQL 5.7.25)
+# Database: Dogs
+# Generation Time: 2019-06-21 21:01:39 +0000
+# ************************************************************
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+# Dump of table Dogs
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `Dogs`;
+
+CREATE TABLE `Dogs` (
+  `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `DogId` mediumint(9) DEFAULT NULL,
+  `Breed` varchar(255) DEFAULT NULL,
+  `Gender` varchar(255) DEFAULT NULL,
+  `Name` varchar(255) DEFAULT NULL,
+  `Images` text,
+  `CURRENT_TIMESTAMP` timestamp NULL DEFAULT NULL,
+  `BOOKED_TIMESTAMP` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `Dogs` WRITE;
+/*!40000 ALTER TABLE `Dogs` DISABLE KEYS */;
+
+INSERT INTO `Dogs` (`id`, `DogId`, `Breed`, `Gender`, `Name`, `Images`, `CURRENT_TIMESTAMP`, `BOOKED_TIMESTAMP`)
+VALUES
+	(1,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+	(2,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+	(3,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+	(4,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+	(5,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+	(6,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+	(7,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+
+/*!40000 ALTER TABLE `Dogs` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table Shelters
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `Shelters`;
+
+CREATE TABLE `Shelters` (
+  `id` int(8) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `name` mediumint(11) DEFAULT NULL,
+  `phone` mediumint(11) DEFAULT NULL,
+  `CURRENT_TIMESTAMP` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `Shelters` WRITE;
+/*!40000 ALTER TABLE `Shelters` DISABLE KEYS */;
+
+INSERT INTO `Shelters` (`id`, `name`, `phone`, `CURRENT_TIMESTAMP`)
+VALUES
+	(00000001,NULL,NULL,NULL),
+	(00000002,NULL,NULL,NULL);
+
+/*!40000 ALTER TABLE `Shelters` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
