@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.25)
 # Database: Dogs
-# Generation Time: 2019-06-21 21:01:39 +0000
+# Generation Time: 2019-06-21 21:30:37 +0000
 # ************************************************************
 
 
@@ -26,7 +26,7 @@
 DROP TABLE IF EXISTS `Dogs`;
 
 CREATE TABLE `Dogs` (
-  `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `Id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `DogId` mediumint(9) DEFAULT NULL,
   `Breed` varchar(255) DEFAULT NULL,
   `Gender` varchar(255) DEFAULT NULL,
@@ -34,13 +34,13 @@ CREATE TABLE `Dogs` (
   `Images` text,
   `CURRENT_TIMESTAMP` timestamp NULL DEFAULT NULL,
   `BOOKED_TIMESTAMP` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `Dogs` WRITE;
 /*!40000 ALTER TABLE `Dogs` DISABLE KEYS */;
 
-INSERT INTO `Dogs` (`id`, `DogId`, `Breed`, `Gender`, `Name`, `Images`, `CURRENT_TIMESTAMP`, `BOOKED_TIMESTAMP`)
+INSERT INTO `Dogs` (`Id`, `DogId`, `Breed`, `Gender`, `Name`, `Images`, `CURRENT_TIMESTAMP`, `BOOKED_TIMESTAMP`)
 VALUES
 	(1,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 	(2,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
@@ -60,20 +60,22 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `Shelters`;
 
 CREATE TABLE `Shelters` (
-  `id` int(8) unsigned zerofill NOT NULL AUTO_INCREMENT,
-  `name` mediumint(11) DEFAULT NULL,
-  `phone` mediumint(11) DEFAULT NULL,
+  `Id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `Name` varchar(11) DEFAULT NULL,
+  `Phone` varchar(15) DEFAULT NULL,
   `CURRENT_TIMESTAMP` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `Zipcode` char(5) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `Shelters` WRITE;
 /*!40000 ALTER TABLE `Shelters` DISABLE KEYS */;
 
-INSERT INTO `Shelters` (`id`, `name`, `phone`, `CURRENT_TIMESTAMP`)
+INSERT INTO `Shelters` (`Id`, `Name`, `Phone`, `CURRENT_TIMESTAMP`, `Zipcode`)
 VALUES
-	(00000001,NULL,NULL,NULL),
-	(00000002,NULL,NULL,NULL);
+	(1,'shelter a','19171111111','2019-06-21 17:29:15','11111'),
+	(2,'shelter b','17181111111','2019-06-21 17:29:16','11112'),
+	(3,'17181111110','17181111112','2019-06-21 17:29:17','11113');
 
 /*!40000 ALTER TABLE `Shelters` ENABLE KEYS */;
 UNLOCK TABLES;
