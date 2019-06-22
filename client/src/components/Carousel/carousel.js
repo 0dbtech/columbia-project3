@@ -2,8 +2,7 @@ import React from 'react';
 
 function CarouselComponent() {
     return (
-        <div>
-            
+        <div className="carousel-container">
             <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
                 <ol className="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
@@ -12,13 +11,13 @@ function CarouselComponent() {
                 </ol>
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <img className="carousel-img d-block w-100" src="http://jpcamara.com/wp-content/uploads/2015/02/carousel.jpg" alt="First slide" />
+                        <img className="carousel-img d-block w-100" src="https://timedotcom.files.wordpress.com/2015/04/dog-child.jpg" alt="First slide" />
                     </div>
                     <div className="carousel-item">
-                        <img className="carousel-img d-block w-100" src="img/02.jpg" alt="Second slide" />
+                        <img className="carousel-img d-block w-100" src="https://coastalgsr.org/test/Images/Main_page/Carousel/Header1.png" alt="Second slide" />
                     </div>
                     <div className="carousel-item">
-                        <img className="carousel-img d-block w-100" src="img/03.jpg"alt="Third slide" />
+                        <img className="carousel-img d-block w-100" src="https://cdn.psychologytoday.com/sites/default/files/styles/image-article_inline_full/public/field_blog_entry_images/brain%20emotions.jpg?itok=U5bUcoT1"alt="Third slide" />
                     </div>
                     
                 </div>

@@ -1,19 +1,135 @@
 html {
   padding: 15px;
+ position: center;
+ background-color: lightpink
+
 }
 
 .map-container{
   padding: 20px;
-  margin-top: 30px;
+  margin-top: 100px;
   height: 500px;
   width: 100%;
-  background-color: lightblue;
+  background-color: lightskyblue;
+}
+
+.btn-secondary{
+  background-color: yellow;
+  border-color: yellow;
+  color: darkblue;
+  width: 30px;
+}
+
+a {
+  padding-right: 3px;
+  font-weight: bold;
+  color: black;
+  padding-left: -2px;
+}
+
+body{
+  font-family: 'Indie Flower', cursive;
+  background-color: lightpink;
+  background-size: cover;
+  background-position: center;
+}
+
+.header-container{
+  font-size: 20px;
+    font-weight: bold;
+    width: 100%;
+    padding: 30px;
+    color: black;
+    position: center
+    
+}
+
+h1{
+  font-size: 50px;
+  font-weight: bold;
+  color:black;
+  padding-left: 68px;
+}
+
+h5 {
+  font-size: 50px;
+  margin-top: 24px;
+  padding-left: 80px;
+  padding-bottom: 25px;
 }
 
 
 
+.form-control{
+  font-size: 10px;
+}
 
-.carousel-indicators{
-  max-width:900px; 
-  max-height:600px
+
+/* Style the search field */
+form.example input[type=text] {
+  padding: 6px 8px 6px 58px;
+  font-size: 22px;
+  border: 1px solid white;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+  width: 1186px;
+  border-right: none;
+}
+
+/* Style the submit button */
+form.example button {
+  float: left;
+  width: 4%;
+  padding: 10px;
+  background: yellow;
+  color:black;
+  font-size: 17px;
+  border: 1px solid yellow;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+  border:#0b7dda;
+
+}
+
+
+
+.inputWithIcon input[type-text]{
+padding-left: 10px;
+
+}
+.inputWithIcon{
+  position: relative;
+  
+}
+
+.inputWithIcon i{
+position: absolute;
+left: 0;
+top: 8px;
+padding: 4px 5px 6px 19px;
+color:red;
+font-size: 23px;
+transition: .3s
+}
+
+.row{
+  margin-right: -400px;
+}
+
+.search-bar {
+  padding-left: 83px;
+}
+
+.footer-container{
+  background-color: gray;
+  height: 40px ;
+  text-align: center;
+  padding-top: 8px;
+  font-weight: bold;
+  font-size: 20px;
 }
