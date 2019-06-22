@@ -11,6 +11,5 @@ module.exports = (sequelize, type) => {
         Image:type.STRING,
         CURRENT_TIMESTAMP: type.DATE,
         BOOKED_TIMESTAMP: type.DATE,
-
-    })
+    });
 }
