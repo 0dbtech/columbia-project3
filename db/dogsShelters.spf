@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ContentFilters</key>
+	<dict/>
+	<key>auto_connect</key>
+	<true/>
+	<key>data</key>
+	<dict>
+		<key>connection</key>
+		<dict>
+			<key>database</key>
+			<string>Dogs</string>
+			<key>host</key>
+			<string>127.0.0.1</string>
+			<key>kcid</key>
+			<string>-5559073992655212419</string>
+			<key>name</key>
+			<string>root@127.0.0.1</string>
+			<key>port</key>
+			<integer>8889</integer>
+			<key>rdbms_type</key>
+			<string>mysql</string>
+			<key>sslCACertFileLocation</key>
+			<string></string>
+			<key>sslCACertFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslCertificateFileLocation</key>
+			<string></string>
+			<key>sslCertificateFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslKeyFileLocation</key>
+			<string></string>
+			<key>sslKeyFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>type</key>
+			<string>SPTCPIPConnection</string>
+			<key>useSSL</key>
+			<integer>0</integer>
+			<key>user</key>
+			<string>root</string>
+		</dict>
+		<key>session</key>
+		<dict>
+			<key>connectionEncoding</key>
+			<string>utf8</string>
+			<key>contentFilter</key>
+			<dict/>
+			<key>contentPageNumber</key>
+			<integer>1</integer>
+			<key>contentSelection</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGOTpYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoK0HCBUWFxgZHSQoLDE2VSRudWxs0wkK
+			CwwQFFdOUy5rZXlzWk5TLm9iamVjdHNWJGNsYXNzow0OD4ACgAOA
+			BKMREhOABYAGgAiADFR0eXBlVHJvd3NUa2V5c18QJlNlbGVjdGlv
+			bkRldGFpbFR5cGVQcmltYXJ5S2V5ZWREZXRhaWxz0wkKCxobHKCg
+			gAfSHh8gIVokY2xhc3NuYW1lWCRjbGFzc2VzXxATTlNNdXRhYmxl
+			RGljdGlvbmFyeaMgIiNcTlNEaWN0aW9uYXJ5WE5TT2JqZWN00goL
+			JSehJoAJgAvSCykqK1lOUy5zdHJpbmeAClJJZNIeHy0uXxAPTlNN
+			dXRhYmxlU3RyaW5noy0vMFhOU1N0cmluZ1hOU09iamVjdNIeHzIz
+			Xk5TTXV0YWJsZUFycmF5ozI0NVdOU0FycmF5WE5TT2JqZWN00h4f
+			IjeiIjhYTlNPYmplY3RfEA9OU0tleWVkQXJjaGl2ZXLROzxUZGF0
+			YYABAAgAEQAaACMALQAyADcARQBLAFIAWgBlAGwAcAByAHQAdgB6
+			AHwAfgCAAIIAhwCMAJEAugDBAMIAwwDFAMoA1QDeAPQA+AEFAQ4B
+			EwEVARcBGQEeASgBKgEtATIBRAFIAVEBWgFfAW4BcgF6AYMBiAGL
+			AZQBpgGpAa4AAAAAAAACAQAAAAAAAAA9AAAAAAAAAAAAAAAAAAAB
+			sA==
+			</data>
+			<key>contentSortColIsAsc</key>
+			<true/>
+			<key>contentViewport</key>
+			<string>{{0, 0}, {734, 473}}</string>
+			<key>isToolbarVisible</key>
+			<true/>
+			<key>queries</key>
+			<string># ************************************************************
+# Sequel Pro SQL dump
+# Version 4541
+#
+# http://www.sequelpro.com/
+# https://github.com/sequelpro/sequelpro
+#
+# Host: 127.0.0.1 (MySQL 5.7.25)
+# Database: Dogs
+# Generation Time: 2019-06-22 04:09:09 +0000
+# ************************************************************
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+# Dump of table Dogs
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `Dogs`;
+
+CREATE TABLE `Dogs` (
+  `Id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `DogId` mediumint(9) DEFAULT NULL,
+  `Breed` varchar(255) DEFAULT NULL,
+  `Gender` varchar(255) DEFAULT NULL,
+  `Name` varchar(255) DEFAULT NULL,
+  `Images` text,
+  `CURRENT_TIMESTAMP` timestamp NULL DEFAULT NULL,
+  `BOOKED_TIMESTAMP` datetime DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+
+
+# Dump of table Shelters
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `Shelters`;
+
+CREATE TABLE `Shelters` (
+  `Id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `Name` varchar(11) DEFAULT NULL,
+  `Phone` varchar(15) DEFAULT NULL,
+  `CURRENT_TIMESTAMP` timestamp NULL DEFAULT NULL,
+  `Zipcode` char(5) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+
+
+
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+</string>
+			<key>table</key>
+			<string>Dogs</string>
+			<key>view</key>
+			<string>SP_VIEW_STRUCTURE</string>
+			<key>windowVerticalDividerPosition</key>
+			<real>214</real>
+		</dict>
+	</dict>
+	<key>encrypted</key>
+	<false/>
+	<key>format</key>
+	<string>connection</string>
+	<key>queryFavorites</key>
+	<array/>
+	<key>queryHistory</key>
+	<array>
+		<string># ************************************************************
+# Sequel Pro SQL dump
+# Version 4541
+#
+# http://www.sequelpro.com/
+# https://github.com/sequelpro/sequelpro
+#
+# Host: 127.0.0.1 (MySQL 5.7.25)
+# Database: Dogs
+# Generation Time: 2019-06-22 04:09:09 +0000
+# ************************************************************
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+# Dump of table Dogs
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `Dogs`;
+CREATE TABLE `Dogs` (
+  `Id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `DogId` mediumint(9) DEFAULT NULL,
+  `Breed` varchar(255) DEFAULT NULL,
+  `Gender` varchar(255) DEFAULT NULL,
+  `Name` varchar(255) DEFAULT NULL,
+  `Images` text,
+  `CURRENT_TIMESTAMP` timestamp NULL DEFAULT NULL,
+  `BOOKED_TIMESTAMP` datetime DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+# Dump of table Shelters
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `Shelters`;
+CREATE TABLE `Shelters` (
+  `Id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `Name` varchar(11) DEFAULT NULL,
+  `Phone` varchar(15) DEFAULT NULL,
+  `CURRENT_TIMESTAMP` timestamp NULL DEFAULT NULL,
+  `Zipcode` char(5) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */</string>
+		<string>CREATE TABLE `Dogs` (
+  `Id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `DogId` mediumint(9) DEFAULT NULL,
+  `Breed` varchar(255) DEFAULT NULL,
+  `Gender` varchar(255) DEFAULT NULL,
+  `Name` varchar(255) DEFAULT NULL,
+  `Images` text,
+  `CURRENT_TIMESTAMP` timestamp NULL DEFAULT NULL,
+  `BOOKED_TIMESTAMP` datetime DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8</string>
+		<string>ntax for '(null)'
+USE Dogs
+-- Create syntax for TABLE 'Dogs'
+CREATE TABLE `Dogs` (
+  `Id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `DogId` mediumint(9) DEFAULT NULL,
+  `Breed` varchar(255) DEFAULT NULL,
+  `Gender` varchar(255) DEFAULT NULL,
+  `Name` varchar(255) DEFAULT NULL,
+  `Images` text,
+  `CURRENT_TIMESTAMP` timestamp NULL DEFAULT NULL,
+  `BOOKED_TIMESTAMP` datetime DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+-- Create syntax for TABLE 'Shelters'
+CREATE TABLE `Shelters` (
+  `Id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `Name` varchar(11) DEFAULT NULL,
+  `Phone` varchar(15) DEFAULT NULL,
+  `CURRENT_TIMESTAMP` timestamp NULL DEFAULT NULL,
+  `Zipcode` char(5) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8</string>
+		<string>-- Create syntax for '(null)'
+USE Dogs
+-- Create syntax for TABLE 'Dogs'
+CREATE TABLE `Dogs` (
+  `Id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `DogId` mediumint(9) DEFAULT NULL,
+  `Breed` varchar(255) DEFAULT NULL,
+  `Gender` varchar(255) DEFAULT NULL,
+  `Name` varchar(255) DEFAULT NULL,
+  `Images` text,
+  `CURRENT_TIMESTAMP` timestamp NULL DEFAULT NULL,
+  `BOOKED_TIMESTAMP` datetime DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+-- Create syntax for TABLE 'Shelters'
+CREATE TABLE `Shelters` (
+  `Id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `Name` varchar(11) DEFAULT NULL,
+  `Phone` varchar(15) DEFAULT NULL,
+  `CURRENT_TIMESTAMP` timestamp NULL DEFAULT NULL,
+  `Zipcode` char(5) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8</string>
+		<string>-- Create syntax for '(null)'
+USE Dogs
+-- Create syntax for TABLE 'Dogs'
+CREATE TABLE `Dogs` (
+  `Id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `DogId` mediumint(9) DEFAULT NULL,
+  `Breed` varchar(255) DEFAULT NULL,
+  `Gender` varchar(255) DEFAULT NULL,
+  `Name` varchar(255) DEFAULT NULL,
+  `Images` text,
+  `CURRENT_TIMESTAMP` timestamp NULL DEFAULT NULL,
+  `BOOKED_TIMESTAMP` datetime DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8</string>
+		<string>CREATE TABLE `Dogs` (
+  `Id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `D</string>
+		<string>-- Create syntax for '(null)'
+
+-- Create syntax for TABLE 'Dogs'
+CREATE TABLE `Dogs` (
+  `Id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `DogId` mediumint(9) DEFAULT NULL,
+  `Breed` varchar(255) DEFAULT NULL,
+  `Gender` varchar(255) DEFAULT NULL,
+  `Name` varchar(255) DEFAULT NULL,
+  `Images` text,
+  `CURRENT_TIMESTAMP` timestamp NULL DEFAULT NULL,
+  `BOOKED_TIMESTAMP` datetime DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+-- Create syntax for TABLE 'Shelters'
+CREATE TABLE `Shelters` (
+  `Id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `Name` varchar(11) DEFAULT NULL,
+  `Phone` varchar(15) DEFAULT NULL,
+  `CURRENT_TIMESTAMP` timestamp NULL DEFAULT NULL,
+  `Zipcode` char(5) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8</string>
+		<string># ************************************************************
+# Sequel Pro SQL dump
+# Version 4541
+#
+# http://www.sequelpro.com/
+# https://github.com/sequelpro/sequelpro
+#
+# Host: 127.0.0.1 (MySQL 5.7.25)
+# Database: Dogs
+# Generation Time: 2019-06-21 21:30:37 +0000
+# ************************************************************
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+# Dump of table Dogs
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `Dogs`;
+CREATE TABLE `Dogs` (
+  `Id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `DogId` mediumint(9) DEFAULT NULL,
+  `Breed` varchar(255) DEFAULT NULL,
+  `Gender` varchar(255) DEFAULT NULL,
+  `Name` varchar(255) DEFAULT NULL,
+  `Images` text,
+  `CURRENT_TIMESTAMP` timestamp NULL DEFAULT NULL,
+  `BOOKED_TIMESTAMP` datetime DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+LOCK TABLES `Dogs` WRITE;
+/*!40000 ALTER TABLE `Dogs` DISABLE KEYS */;
+INSERT INTO `Dogs` (`Id`, `DogId`, `Breed`, `Gender`, `Name`, `Images`, `CURRENT_TIMESTAMP`, `BOOKED_TIMESTAMP`)
+VALUES
+	(1,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+	(2,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+	(3,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+	(4,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+	(5,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+	(6,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+	(7,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `Dogs` ENABLE KEYS */;
+UNLOCK TABLES;
+# Dump of table Shelters
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `Shelters`;
+CREATE TABLE `Shelters` (
+  `Id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `Name` varchar(11) DEFAULT NULL,
+  `Phone` varchar(15) DEFAULT NULL,
+  `CURRENT_TIMESTAMP` timestamp NULL DEFAULT NULL,
+  `Zipcode` char(5) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+LOCK TABLES `Shelters` WRITE;
+/*!40000 ALTER TABLE `Shelters` DISABLE KEYS */;
+INSERT INTO `Shelters` (`Id`, `Name`, `Phone`, `CURRENT_TIMESTAMP`, `Zipcode`)
+VALUES
+	(1,'shelter a','19171111111','2019-06-21 17:29:15','11111'),
+	(2,'shelter b','17181111111','2019-06-21 17:29:16','11112'),
+	(3,'17181111110','17181111112','2019-06-21 17:29:17','11113');
+/*!40000 ALTER TABLE `Shelters` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */</string>
+	</array>
+	<key>rdbms_type</key>
+	<string>mysql</string>
+	<key>rdbms_version</key>
+	<string>5.7.25</string>
+	<key>version</key>
+	<integer>1</integer>
+</dict>
+</plist>
