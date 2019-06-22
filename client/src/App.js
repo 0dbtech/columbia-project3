@@ -4,6 +4,7 @@ import DogComponent from "./components/Dog/dog"
 import FooterComponent from "./components/Footer/footer"
 import SearchComponent from "./components/Search/search"
 import './App.css';
+
 class App extends Component {
   render() {
     return (
