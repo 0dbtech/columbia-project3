@@ -3,6 +3,7 @@ import HeaderComponent from "./components/Header/header"
 import DogComponent from "./components/Dog/dog"
 import FooterComponent from "./components/Footer/footer"
 import SearchComponent from "./components/Search/search"
+import { CardDeck } from 'react-bootstrap'
 import './App.css';
 
 class App extends Component {
@@ -18,7 +19,18 @@ class App extends Component {
         </div>
 
         <div className="myDog">
-          <DogComponent></DogComponent>
+          <CardDeck className="card-deck">
+              <DogComponent></DogComponent>
+              <DogComponent></DogComponent>
+              <DogComponent></DogComponent>
+              
+          </CardDeck>
+          <CardDeck className="card-deck">
+              <DogComponent></DogComponent>
+              <DogComponent></DogComponent>
+              <DogComponent></DogComponent>
+              
+          </CardDeck>
         </div>
         
         <div>

@@ -23,10 +23,11 @@ a {
 }
 
 body{
-  font-family: 'Indie Flower', cursive;
-  background-image: url('/img/01.jpg');
+  font-family: 'Libre Baskerville', serif;
+  /* background-image: url('/img/01.jpg'); */
   background-size: cover;
   background-position: center;
+  background-color: lightblue;
 }
 
 .header-container{
@@ -39,26 +40,28 @@ body{
     
 }
 
-h1{
-  font-size: 50px;
-  font-weight: bold;
-  color:black;
-  padding-left: 68px;
+p {
+  font-size: 42px;
+    font-weight: bold;
+    color: black;
+    margin-left: -25px;
+ 
 }
 
 h5 {
   font-size: 50px;
   margin-top: 24px;
-  padding-left: 80px;
-  padding-bottom: 25px;
+  padding-right: 65px;
+  margin-bottom: 26px;
 }
 
-.form-control{
+
+/* .form-control{
   font-size: 10px;
-}
+} */
 
 /* Style the search field */
-form.example input[type=text] {
+/* form.example input[type=text] {
   padding: 6px 8px 6px 58px;
   font-size: 22px;
   border: 1px solid white;
@@ -67,10 +70,10 @@ form.example input[type=text] {
   background: #f1f1f1;
   width: 1186px;
   border-right: none;
-}
+} */
 
 /* Style the submit button */
-form.example button {
+/* form.example button {
   float: left;
   width: 4%;
   padding: 10px;
@@ -79,21 +82,27 @@ form.example button {
   font-size: 17px;
   border: 1px solid yellow;
   border-left: none; /* Prevent double borders */
-  cursor: pointer;
-}
+  /* cursor: pointer;
+} */
 
-form.example button:hover {
+/* form.example button:hover {
   background: #0b7dda;
   border:#0b7dda;
 
-}
+} */ */
 
 .inputWithIcon input[type-text]{
-padding-left: 10px;
+padding-left: 25px;
+}
 
+.input{
+  padding-left: 38px;
 }
 .inputWithIcon{
   position: relative;
+  padding-left: 10px;
+  background-color: black;
+  width: 500px;
   
 }
 
@@ -101,18 +110,21 @@ padding-left: 10px;
 position: absolute;
 left: 0;
 top: 8px;
-padding: 4px 5px 6px 19px;
+padding: 0px 5px 0px 19px;
 color:red;
 font-size: 23px;
-transition: .3s
+transition: .3s;
+z-index: 20;
 }
+
+
 
 .row{
   margin-right: -400px;
 }
 
 .search-bar {
-  padding-left: 83px;
+  padding-left: 426px;
 }
 
 .footer-container{
@@ -127,4 +139,46 @@ transition: .3s
 
 .dog-container{
   margin-top: 452px;
+}
+
+.myuser{
+  font-size: 20px;
+    font-weight: bold;
+    width: 100%;
+    padding: 30px;
+    color: black;
+}
+.search-button{
+  background-color: yellow;
+  border: 1px solid yellow;
+  width: 40px;
+}
+
+.form-control{
+  border: white;
+}
+
+.dog-img{
+  height: 50px;
+}
+
+.card-deck{
+  padding-top: 30px;
+  margin-left: 65px;
+  margin-right: 65px;
+  padding-left: 137px;
+  padding-right: 158px;
+}
+
+.col-6{
+  margin-top: 4px;
+}
+.card-button{
+  background-color: red;
+  border: 1px solid red;
+}
+
+
+.search-container{
+  text-align: center;
 }
