@@ -16,7 +16,7 @@ function SearchComponent() {
                     aria-describedby="basic-addon2"
                 />
                 <InputGroup.Append>
-                    <Button className="search-button" variant="outline-secondary"><i className="fa fa-search"></i></Button>
+                <Button className="search-button" variant="outline-secondary"><i className="fa fa-search"></i></Button>
                 </InputGroup.Append>
             </InputGroup>
             </div>

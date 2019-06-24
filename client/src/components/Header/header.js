@@ -8,7 +8,7 @@ function HeaderComponent() {
                 <Container>
                     <Row>
                         <Col xs={12} md={8}>
-                            <h1><i className="fas fa-paw"></i><a href="#">Buddy</a></h1>
+                            <p className="logo"><i className="fas fa-paw"></i><a href="#">Buddy</a></p>
                         </Col>
                         <Col xs={6} md={4} className="myUser">
                             <a href="#">Signin</a>/<a href="#">Signup</a>

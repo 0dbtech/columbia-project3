@@ -16,7 +16,7 @@ class DogComponent extends React.Component {
           </Card.Title>
           <Card.Title>Age: {this.props.age} years old</Card.Title>
           <Card.Title>Breed: {this.props.breed}</Card.Title>
-          <Button className="card-button" variant="primary"><i className="fas fa-paw"></i> paw</Button>
+          <Button className="card-button" variant="primary"><i className="fas fa-paw"></i>   paw</Button>
         </Card.Body>
       </Card>
      

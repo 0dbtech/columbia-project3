@@ -55,10 +55,6 @@ z-index: 20;
   color: black;
 }
 
-.dog-img{
-  height: 50px;
-}
-
 .card-deck{
   padding-top: 30px;
   margin-left: 65px;
@@ -69,9 +65,7 @@ z-index: 20;
   margin-bottom: 197px;
 }
 
-.col-6{
-  margin-top: 4px;
-}
+
 .card-button{
   background-color: red;
   border: 1px solid red;
@@ -103,20 +97,24 @@ z-index: 20;
 .myUser{
   font-size: 15px;
   padding-left: 191px;
+  padding-top: 37px;
 
 }
 
 .dog-img{
   height: 300px;
-  
 }
 
 .card{
   border: 2px solid darkgreen;
-  /* border-radius: 50%; */
+  
+ 
 }
-
 .card-body{
-  background-color: lightgreen
+  background-color: rgb(16, 161, 137);
+  
 }
 
+.logo {
+  font-size: 50px;
+}
