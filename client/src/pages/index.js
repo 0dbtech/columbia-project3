@@ -23,13 +23,13 @@ class FrontPage extends React.Component {
     image : 'https://t2.ea.ltmcdn.com/en/images/9/0/0/img_names_for_pit_bull_dogs_9_600.jpg'
   },
   {
-    name : 'zouzou',
+    name : 'Zouzou',
     age : 8,
     breed : 'beagle',
     image : 'https://www.muglestonspitbullfarm.com/asccustompages/uploadedfiles/dbadminfiles/bluetri45-hsysS-NIldk-qwLhR.jpg'
   },
   {
-    name : 'muchi',
+    name : 'Muchi',
     age : 4,
     breed : 'duddle',
     image : 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-banner-royalty-free-image-609029342-1559751840.jpg?crop=0.466xw:1.00xh;0.0743xw,0&resize=768:*'
@@ -37,8 +37,14 @@ class FrontPage extends React.Component {
   {
     name : 'sky',
     age : 3,
-    breed : 'husky',
+    breed : 'Husky',
     image : 'https://cdn.pixabay.com/photo/2018/05/07/10/48/husky-3380548_960_720.jpg'
+  },
+  {
+    name : 'Prince',
+    age : 4,
+    breed : 'Labradoodle',
+    image : 'https://thenypost.files.wordpress.com/2018/09/85327728.jpg?quality=90&strip=all&w=618&h=410&crop=1'
   }
 ]
 

@@ -7,8 +7,9 @@ class DogComponent extends React.Component {
   }
   render() {
     return (
+      
       <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={this.props.image} />
+        <Card.Img  className="dog-img" variant="top" src={this.props.image} />
         <Card.Body>
           <Card.Title>
             {this.props.name}
@@ -18,6 +19,7 @@ class DogComponent extends React.Component {
           <Button className="card-button" variant="primary">paw</Button>
         </Card.Body>
       </Card>
+     
     );
   }
 }
