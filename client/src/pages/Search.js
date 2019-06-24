@@ -4,9 +4,9 @@ import React from 'react';
 function SearchComponent() {
     return (
         <div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-1 col-md-1">
+            <div className="container">
+                <div className="row">
+                    <div className="col-1 col-md-1">
                         <select >
                             <option value="All">All</option>
                             <option value="Labrador retriever">Labrador retriever</option>
@@ -21,12 +21,12 @@ function SearchComponent() {
                             <option value="German shorthaired pointer">German shorthaired pointer</option>
                         </select>
                     </div>
-                    <div class="col-10 col-md-10">
-                        <input class="form-control my-0 py-1 amber-border" type="text" placeholder="Search" aria-label="Search" />
+                    <div className="col-10 col-md-10">
+                        <input className="form-control my-0 py-1 amber-border" type="text" placeholder="Search" aria-label="Search" />
                     </div>
-                    <div class="col-1 col-md-1">
-                        <div class="input-group-append">
-                            <button type="search" class="input-group-text amber lighten-3" id="basic-text1"><span class="glyphicon glyphicon-search"
+                    <div className="col-1 col-md-1">
+                        <div className="input-group-append">
+                            <button type="search" className="input-group-text amber lighten-3" id="basic-text1"><span className="glyphicon glyphicon-search"
                                 aria-hidden="true"></span>
                             </button>
                         </div>
@@ -44,12 +44,12 @@ export default SearchComponent;
 
 
 
-// {/* <div class="container">
-//    <div class="row">
-//        <div class="col-sm-1"><select class="form-control form-control-lg">
+// {/* <div className="container">
+//    <div className="row">
+//        <div className="col-sm-1"><select className="form-control form-control-lg">
 //  <option>All</option>
 // </select></div>
-//        <div class="col-sm-9"><input class="form-control form-control-lg" type="text" placeholder=".form-control-lg"/></div>
-//        <div class="col-sm-1"><button type="button" class="btn btn-primary btn-lg">Large button</button></div>
+//        <div className="col-sm-9"><input className="form-control form-control-lg" type="text" placeholder=".form-control-lg"/></div>
+//        <div className="col-sm-1"><button type="button" className="btn btn-primary btn-lg">Large button</button></div>
 //    </div>
 // </div> */}
