@@ -12,11 +12,11 @@ class DogComponent extends React.Component {
         <Card.Img  className="dog-img" variant="top" src={this.props.image} />
         <Card.Body>
           <Card.Title>
-            {this.props.name}
+            Name: {this.props.name}
           </Card.Title>
-          <Card.Title>{this.props.age} years old</Card.Title>
-          <Card.Title>{this.props.breed}</Card.Title>
-          <Button className="card-button" variant="primary">paw</Button>
+          <Card.Title>Age: {this.props.age} years old</Card.Title>
+          <Card.Title>Breed: {this.props.breed}</Card.Title>
+          <Button className="card-button" variant="primary"><i className="fas fa-paw"></i> paw</Button>
         </Card.Body>
       </Card>
      

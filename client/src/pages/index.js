@@ -26,13 +26,13 @@ class FrontPage extends React.Component {
     name : 'Zouzou',
     age : 8,
     breed : 'beagle',
-    image : 'https://www.muglestonspitbullfarm.com/asccustompages/uploadedfiles/dbadminfiles/bluetri45-hsysS-NIldk-qwLhR.jpg'
+    image : 'http://static.ddmcdn.com/en-us/apl/breedselector/images/breed-selector/dogs/breeds/beagle_04_lg.jpg'
   },
   {
     name : 'Muchi',
     age : 4,
-    breed : 'duddle',
-    image : 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-banner-royalty-free-image-609029342-1559751840.jpg?crop=0.466xw:1.00xh;0.0743xw,0&resize=768:*'
+    breed : 'Corgi',
+    image : 'https://images2.minutemediacdn.com/image/upload/c_crop,h_1194,w_2119,x_0,y_70/f_auto,q_auto,w_1100/v1554738239/shape/mentalfloss/63484-istock-533859316.jpg'
   },
   {
     name : 'sky',

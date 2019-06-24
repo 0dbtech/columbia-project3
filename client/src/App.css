@@ -108,5 +108,15 @@ z-index: 20;
 
 .dog-img{
   height: 300px;
+  
+}
+
+.card{
+  border: 2px solid darkgreen;
+  /* border-radius: 50%; */
+}
+
+.card-body{
+  background-color: lightgreen
 }
 
