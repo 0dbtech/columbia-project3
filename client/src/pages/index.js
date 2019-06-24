@@ -1,0 +1,83 @@
+import React from 'react';
+import HeaderComponent from "../components/Header/header"
+import DogComponent from "../components/Dog/dog"
+import FooterComponent from "../components/Footer/footer"
+import SearchComponent from "../components/Search/search"
+import { CardDeck } from 'react-bootstrap'
+import { Card } from 'react-bootstrap';
+
+class FrontPage extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  dogs = [{
+    name : 'Tala',
+    age : 2,
+    breed : 'Golden retriver',
+    image : 'https://images2.minutemediacdn.com/image/upload/c_fill,g_auto,h_1248,w_2220/f_auto,q_auto,w_1100/v1555378804/shape/mentalfloss/istock_000009655750_small.jpg'
+  },
+  {
+    name : 'Boo',
+    age : 5,
+    breed : 'pitpull',
+    image : 'https://t2.ea.ltmcdn.com/en/images/9/0/0/img_names_for_pit_bull_dogs_9_600.jpg'
+  },
+  {
+    name : 'zouzou',
+    age : 8,
+    breed : 'beagle',
+    image : 'https://www.muglestonspitbullfarm.com/asccustompages/uploadedfiles/dbadminfiles/bluetri45-hsysS-NIldk-qwLhR.jpg'
+  },
+  {
+    name : 'muchi',
+    age : 4,
+    breed : 'duddle',
+    image : 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-banner-royalty-free-image-609029342-1559751840.jpg?crop=0.466xw:1.00xh;0.0743xw,0&resize=768:*'
+  },
+  {
+    name : 'sky',
+    age : 3,
+    breed : 'husky',
+    image : 'https://cdn.pixabay.com/photo/2018/05/07/10/48/husky-3380548_960_720.jpg'
+  }
+]
+
+  render() {
+    return (
+      <div>
+        <div className="myHeader">
+         <HeaderComponent></HeaderComponent>
+        </div>
+        <div className="mySearch">
+          <SearchComponent></SearchComponent>
+        </div>
+        <div className="myDogs">
+          {this.createDogCardDecks()}
+        </div>
+        <div className="myFooter">
+        <FooterComponent></FooterComponent>
+        </div>
+      </div>
+    );
+  }
+
+  createDogCardDecks = () => {
+    let table = []
+    let k = 0
+    for (let i = 0; i < this.dogs.length; i++) {
+      let children = []
+      for (let j = 0; j < 3; j++) {
+        if(this.dogs[k])
+          children.push(<DogComponent name={this.dogs[k].name} age={this.dogs[k].age} breed={this.dogs[k].breed} image={this.dogs[k].image}></DogComponent>)
+        else
+          children.push(<Card style={{ width: '18rem' }}></Card>)
+        k++
+        i=k-1;
+      }
+      table.push(<CardDeck>{children}</CardDeck>)
+    }
+    return table
+  }
+}
+
+export default FrontPage;

@@ -7,41 +7,23 @@ function SearchComponent() {
             <div className="search-container">
                 <p>Find buddies in your neighborhood</p>
             </div>
+            <div className="search-box">
             <InputGroup className="mb-3">
-                <div className="search-bar">
-                    <div className="inputWithIcon">
-                        <FormControl className="input"
-                            placeholder="zip code"
-                            aria-label="Recipient's username"
-                            aria-describedby="basic-addon2"
-                        />
-                        <i class="fas fa-map-marker-alt icon" aria-hidden="true"></i>
-                    </div>
-                </div>
+            <i className="fas fa-map-marker-alt icon" aria-hidden="true"></i>
+                <FormControl className="input"
+                    placeholder="zip code"
+                    aria-label="zip code"
+                    aria-describedby="basic-addon2"
+                />
                 <InputGroup.Append>
-                    <Button variant="outline-secondary" className="search-button"><i class="fa fa-search"></i></Button>
+                    <Button className="search-button" variant="outline-secondary"><i className="fa fa-search"></i></Button>
                 </InputGroup.Append>
             </InputGroup>
-
+            </div>
         </div>
     );
 }
 
 export default SearchComponent;
-
-{/* // <form className="example" action="action_page.php">
-            //     <h5>Find buddies in your neighborhood</h5>
-            //     <div class="search-bar">
-            //         <div class="inputWithIcon">
-            //             <input type="text" placeholder="zip code" name="search" />
-            //             <i class="fas fa-map-marker-alt icon" aria-hidden="true"></i>
-            //         </div>
-            //         <div>
-            //             <button type="submit"><i class="fa fa-search"></i></button>
-            //         </div>
-            //     </div>
-            // </form> */}
-
-
 
 

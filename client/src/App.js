@@ -1,44 +1,16 @@
 import React, { Component } from "react";
-import HeaderComponent from "./components/Header/header"
-import DogComponent from "./components/Dog/dog"
-import FooterComponent from "./components/Footer/footer"
-import SearchComponent from "./components/Search/search"
-import { CardDeck } from 'react-bootstrap'
+import FrontPage from './pages/index'
 import './App.css';
 
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
       <div>
-        <div className="myHeader">
-         <HeaderComponent></HeaderComponent>
-        </div>
-        
-        <div className="mySearch">
-          <SearchComponent></SearchComponent>
-        </div>
-
-        <div className="myDog">
-          <CardDeck className="card-deck">
-              <DogComponent></DogComponent>
-              <DogComponent></DogComponent>
-              <DogComponent></DogComponent>
-              
-          </CardDeck>
-          <CardDeck className="card-deck">
-              <DogComponent></DogComponent>
-              <DogComponent></DogComponent>
-              <DogComponent></DogComponent>
-              
-          </CardDeck>
-        </div>
-        
-        <div>
-        <FooterComponent></FooterComponent>
-        </div>
+        <FrontPage />
       </div>
-    );
+    )
   }
+
 }
 
 export default App;
