@@ -5,12 +5,16 @@ const app = express();
 const { Dog, Shelter, Tag, User } = require('./sequelize');
 const passport = require('./passport');
 const session = require("express-session");
+const cors = require('cors');
+const bodyParser = require('body-parser');
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(cors({origin: 'http://localhost:3000'}));
 app.use(session({ secret: "running elephant has broken waffle mountain", resave: true, saveUninitialized: true}));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -63,18 +67,31 @@ app.get('/api/shelters/:tag/tag', (req, res) => {
     .then(shelters => res.json(shelters))
 });
 
-app.post("/api/login", passport.authenticate("local"), function(req, res) {
-    // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
-    // So we're sending the user back the route to the members page because the redirect will happen on the front end
-    // They won't get this or even be able to access this page if they aren't authed
-    res.json("/members");
+app.post("/api/login", function(req, res) {
+    passport.authenticate("local", function(err, user, info) {
+        if (err) {
+            res.status(404).json(err);
+            return;
+        }
+
+        if (user) {
+            res.status(200);
+            res.json({
+                user: user,
+                success: true
+            });
+            console.log(user);
+        } else {
+            console.log('wrong');
+            res.status(401).json(info);
+        }
+    })(req, res);
 });
 //
 // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
 // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
 // otherwise send back an error
 app.post("/api/signup", function(req, res) {
-    console.log(req.body);
     User.create({
         email: req.body.email,
         password: req.body.password

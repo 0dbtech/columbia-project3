@@ -1,24 +1,31 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import SearchComponent from "./components/Search";
 import FooterComponent from "./components/Footer";
+import NavbarComponent from "./components/navbar";
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import SearchComponent from "./pages/Search";
+import SignUp from "./pages/signup";
+import LogIn from "./pages/login";
+import withAuth from "./withAuth";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Paw Pal | Heroku Deployment Template</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>client/src/App.js</code> and save to reload.  
-        </p>
-        <h2>React Search component should be below this</h2>
-        <SearchComponent></SearchComponent>
-        
-        <FooterComponent></FooterComponent>
+        <Router>
+          <div className="App-header">
+            <img src={logo} className="App-logo" alt="logo"/>
+            <NavbarComponent/>
+          </div>
+          <Switch>
+            <Route exact={true} path="/" component={withAuth(SearchComponent)}/>
+            <Route path="/search" component={withAuth(SearchComponent)}/>
+            <Route path="/signup" component={SignUp}/>
+            <Route path="/login" component={LogIn}/>
+          </Switch>
+        </Router>
+        <FooterComponent/>
       </div>
     );
   }

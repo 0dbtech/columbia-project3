@@ -2,9 +2,9 @@ import React from 'react';
 
 function FooterComponent() {
     return (
-        <footer style={footerStyle} class="footer">
-        <div class="container">
-          <span class="text-muted">Place sticky footer content here. TEST DEPLOY 1 2 3</span>
+        <footer style={footerStyle} className="footer">
+        <div className="container">
+          <span className="text-muted">Place sticky footer content here. TEST DEPLOY 1 2 3</span>
         </div>
       </footer>
     );
