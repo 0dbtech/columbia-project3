@@ -3,6 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import SearchComponent from "./components/Search";
 import FooterComponent from "./components/Footer";
+import FirebaseForm from "./components/Firebase"
 
 class App extends Component {
   render() {
@@ -16,9 +17,9 @@ class App extends Component {
           To get started, edit <code>client/src/App.js</code> and save to reload.  
         </p>
         <h2>React Search component should be below this</h2>
-        <SearchComponent></SearchComponent>
-        
-        <FooterComponent></FooterComponent>
+        <FirebaseForm></FirebaseForm>
+
+   
       </div>
     );
   }
