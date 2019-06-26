@@ -19,6 +19,8 @@ class DogComponent extends React.Component {
           <Button className="card-button" variant="primary"><i className="fas fa-paw"></i>   paw</Button>
         </Card.Body>
       </Card>
+
+      
      
     );
   }
