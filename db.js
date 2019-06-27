@@ -1,11 +1,14 @@
+let db  =require('./sequelize');
 
-
-function controls() {
-    updateTimeStamp = {
-            
+const controls = {
+     getDogs() {
+       return console.log(db.Dog);
+    },
+    getShelters() {
+       return console.log(db.Shelter);
     }
 }
 
-module.exports ={ 
-    controls
+module.exports = {
+controls
 };
