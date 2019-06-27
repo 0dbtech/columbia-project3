@@ -10,7 +10,8 @@ body{
   font-family: 'Libre Baskerville', serif;
   background-size: cover;
   background-position: center;
-  background-color: lightblue;
+  /* background-color: lightblue; */
+  background-image: url("/01.jpg"); 
 }
 
 
@@ -51,8 +52,9 @@ z-index: 20;
   border: 1px solid yellow;
   width: 40px;
   font-size: 18px;
-  height: 33px;
+  height: 35px;
   color: black;
+  margin-top: -1px;
 }
 
 .card-deck{
@@ -117,4 +119,12 @@ z-index: 20;
 
 .logo {
   font-size: 50px;
+}
+
+.myDogs{
+  margin-top: 202px;
+}
+
+.paw-btn{
+  margin-left: 5px;
 }
