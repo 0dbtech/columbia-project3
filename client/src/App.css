@@ -11,7 +11,7 @@ body{
   background-size: cover;
   background-position: center;
   /* background-color: lightblue; */
-  background-image: url("/01.jpg"); 
+  background-image: url("./assets/img/01.jpg"); 
 }
 
 
