@@ -1,21 +1,24 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import React, {component} from "react";
-import FrontPage from './pages/index';
-import Results from './pages/results';
+import { Link, Switch, Route } from 'react-router-dom';
+import React, { component } from "react";
 import './App.css';
+import Home from './pages/home';
+import Dogs from './pages/dogs';
+
+import Details from './pages/details';
 
 class App extends React.Component {
   render() {
     return (
-      <Router>
       <div className="App">
-        {/* <Switch> */}
-            <Route exact path='/' component={FrontPage} />
-            <Route path='/results' component={Results} />
-        {/* </Switch> */}
+        <div className="App-intro">
+          <Switch>
+            <Route exact path="/"  component={Home} />
+            <Route path="/Dogs" component={Dogs} />   
+            <Route path="/Details/:dogId" component={Details} />
+          </Switch>
+        </div>
       </div>
-    </Router>
-    )
+    );
   }
 
 }

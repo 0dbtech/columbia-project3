@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import { Link, NavLink} from "react-router-dom";
 
 class HeaderComponent extends React.Component {
     render() { 
@@ -9,10 +10,10 @@ class HeaderComponent extends React.Component {
                     <Container>
                         <Row>
                             <Col xs={12} md={8}>
-                                <p className="logo"><i className="fas fa-paw"></i><a href="#">Buddy</a></p>
+                                <p className="logo"><i className="fas fa-paw"></i><Link to="/">Buddy</Link></p>
                             </Col>
                             <Col xs={6} md={4} className="myUser">
-                                <a href="#">Signin</a>/<a href="#">Signup</a>
+                                <NavLink to="/Signin">Signin</NavLink>/<NavLink to="/Singup">Signup</NavLink>
                             </Col>
                         </Row>
                     </Container>
