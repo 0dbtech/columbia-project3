@@ -56,6 +56,11 @@ z-index: 20;
   color: black;
   margin-top: -1px;
 }
+.search-buttonr:hover {
+  background:rgb(11, 11, 31);
+  border: rgb(11, 11, 31);
+  color:white;
+}
 
 .card-deck{
   margin: 0px 117px 0px 117px;
@@ -93,7 +98,7 @@ z-index: 20;
   height: 35px;
   margin-top: -1px;
   border: 1px solid white;
-  
+  background-color: whitesmoke;
 }
 
 .myUser{
@@ -107,7 +112,7 @@ z-index: 20;
   height: 300px;
   width: 300px;
   border-radius: 50% 50%;
-  border: 2px solid whitesmoke;
+  border: 2px solid whitesmoke
 
 }
 
@@ -136,4 +141,17 @@ z-index: 20;
 
 .dog-page{
   background-color:white;;
+}
+
+.dog-register {
+  background-color: red;
+  margin-top: 10px;
+  height: 35px;
+  border: red;
+   
+}
+
+.dog-register:hover {
+  background:rgb(11, 11, 31);
+  border: rgb(11, 11, 31);
 }
