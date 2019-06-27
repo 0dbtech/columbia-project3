@@ -21,7 +21,7 @@ class Dogs extends React.Component {
   render() {
     console.log("this.results: ", this.state.results);
     return (
-      <div>
+      <div className="dog-page">
         <div className="myHeader">
          <HeaderComponent />
         </div>

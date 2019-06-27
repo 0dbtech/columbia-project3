@@ -9,7 +9,7 @@ import { Container, Col, Row } from 'react-bootstrap';
 class Details extends React.Component {
   render() {
     return (
-      <div>
+      <div className="dog-page">
         <div className="myHeader">
          <HeaderComponent></HeaderComponent>
         </div>

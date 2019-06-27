@@ -8,12 +8,12 @@ a {
 
 body{
   font-family: 'Libre Baskerville', serif;
+}
+.home-page{
+  background-image: url("./assets/img/01.jpg"); 
   background-size: cover;
   background-position: center;
-  /* background-color: lightblue; */
-  background-image: url("./assets/img/01.jpg"); 
 }
-
 
  .icon{
 position: absolute;
@@ -58,13 +58,10 @@ z-index: 20;
 }
 
 .card-deck{
-  padding-top: 30px;
-  margin-left: 65px;
-  margin-right: 65px;
+  margin: 0px 117px 0px 117px;
   padding-left: 137px;
-  padding-right: 158px;
-  margin-top: -200px;
-  margin-bottom: 197px;
+  padding-bottom: 70px;
+  padding-left: 20px;
 }
 
 
@@ -86,6 +83,7 @@ z-index: 20;
   margin: 0 auto;
   width: 410px;
   height:300px;
+  margin-top: 46px;
 
 }
 
@@ -93,7 +91,9 @@ z-index: 20;
   padding-left: 40px;
   font-size: 12px;
   height: 35px;
-  margin-top: -1px
+  margin-top: -1px;
+  border: 1px solid white;
+  
 }
 
 .myUser{
@@ -105,26 +105,35 @@ z-index: 20;
 
 .dog-img{
   height: 300px;
+  width: 300px;
+  border-radius: 50% 50%;
+  border: 2px solid whitesmoke;
+
 }
 
 .card{
-  border: 2px solid darkgreen;
-  
- 
+  border: 1px solid white;
+  background-color:white;
+  border: 1px solid white;
 }
 .card-body{
-  background-color: rgb(16, 161, 137);
-  
-}
+  background-color:white;
+  text-align: center;
+  background-color:white;
 
+}
 .logo {
   font-size: 50px;
 }
 
 .myDogs{
-  margin-top: 202px;
+  margin-top: 50px;
 }
 
 .paw-btn{
   margin-left: 5px;
+}
+
+.dog-page{
+  background-color:white;;
 }
