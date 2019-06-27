@@ -21,12 +21,9 @@ class DogComponent extends React.Component {
           </Link>
         </Card.Body>
       </Card>
-<<<<<<< HEAD
 
       
      
-=======
->>>>>>> create-search-bar
     );
   }
 
