@@ -7,4 +7,4 @@ module.exports = (sequelize, type) => {
         },
         name: type.STRING
     })
-}
+};

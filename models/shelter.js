@@ -10,4 +10,4 @@ module.exports = (sequelize, type) => {
       ZipCode: type.INTEGER,
       CURRENT_TIMESTAMP: type.DATE,
   })
-}
+};
