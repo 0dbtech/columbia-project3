@@ -20,7 +20,7 @@ app.use(session({ secret: "running elephant has broken waffle mountain", resave:
 app.use(passport.initialize());
 app.use(passport.session());
 
-require('./routes/api-routes')(app);
+// require('./routes/api-routes')(app);
 // require('./routes/html-routes')(app);
 
 app.listen(PORT, function() {
