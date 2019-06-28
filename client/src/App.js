@@ -8,6 +8,9 @@ import Details from './pages/details';
 import Signup from "./pages/signup"
 import FakeDataBase from "./FakeDataBase"
 import API from "./API";
+import ShelterForm from "./components/Form"
+
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -45,6 +48,7 @@ class App extends Component {
             <Route path="/details/:dogId" component={Details} props={this.state.db} />
             <Route path="/Signin" component={LogIn} />
             <Route path="/Signup" component={Signup} />
+            <Route path="/admin" component={ShelterForm} />
           </Switch>
         </div>
       </div>
