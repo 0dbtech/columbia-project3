@@ -27,11 +27,7 @@ class SearchComponent extends React.Component {
                             <Button className="search-button" variant="outline-secondary" onClick={this.handleClick}><i className="fa fa-search"></i></Button>
                         </InputGroup.Append>
                         
-                       
-                            <Button className="dog-register" variant="primary" size="lg" block>
-                                register your dog
-                            </Button>
-                            
+
                     </InputGroup>
                 </div>
                 </div>
