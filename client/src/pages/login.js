@@ -11,11 +11,13 @@ class LogIn extends Component {
 
   doLogIn(e) {
     e.preventDefault();
-    axios.post('/api/login', {
+    console.log('sending')
+    axios.post('http://localhost:8080/api/login', {
       email: this.state.email,
       password: this.state.password
-    }).then(() => {
-      this.props.history.push('/');
+    }).then((data) => {
+      console.log('got from server ', data)
+      // this.props.history.push('/');
     }).catch((e) => {
       console.log(e);
       this.setState({error: 'Email and password didn\'t match'})

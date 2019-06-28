@@ -11,11 +11,12 @@ class SignUp extends Component {
 
   doSignUp(e) {
     e.preventDefault();
-    axios.post('/api/signup', {
+    axios.post('http://localhost:8080/api/signup', {
       email: this.state.email,
       password: this.state.password
-    }).then(() => {
-      this.props.history.push('/login');
+    }).then((user) => {
+      console.log('here', user)
+      // this.props.history.push('/login');
     }).catch((e) => {
       console.log(e);
       this.setState({error: 'There\'s probably already a user with such an email.'});

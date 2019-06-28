@@ -20,6 +20,8 @@
     "nodemon": "^1.18.7"
   },
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
@@ -30,6 +32,6 @@
     "mysql2": "^1.6.5",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
-    "sequelize": "^5.8.11"
+    "sequelize": "^5.8.12"
   }
 }
