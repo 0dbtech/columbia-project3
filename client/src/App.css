@@ -1,24 +1,154 @@
-.App {
+
+a {
+  padding-right: 3px;
+  font-weight: bold;
+  color: black;
+  padding-left: -2px;
+}
+
+body{
+  font-family: 'Libre Baskerville', serif;
+}
+.home-page{
+  background-image: url("./assets/img/01.jpg"); 
+  background-size: cover;
+  background-position: center;
+}
+
+ .icon{
+position: absolute;
+left: 0;
+top: 8px;
+padding: 0px 5px 0px 10px;
+color:red;
+font-size: 18px;
+transition: .3s;
+z-index: 20;
+}
+
+.footer-container{
+  background-color: gray;
+  height: 40px ;
+  text-align: center;
+  padding-top: 8px;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 452px;
+}
+
+.dog-container{
+  margin-top: 452px;
+}
+
+.header-box{
+  font-size: 30px;
+  font-weight: bold;
+  width: 100%;
+  padding: 30px;
+  color: black;
+}
+.search-button{
+  background-color: yellow;
+  border: 1px solid yellow;
+  width: 40px;
+  font-size: 18px;
+  height: 35px;
+  color: black;
+  margin-top: -1px;
+}
+.search-buttonr:hover {
+  background:rgb(11, 11, 31);
+  border: rgb(11, 11, 31);
+  color:white;
+}
+
+.card-deck{
+  margin: 0px 117px 0px 117px;
+  padding-left: 137px;
+  padding-bottom: 70px;
+  padding-left: 20px;
+}
+
+
+.card-button{
+  background-color: red;
+  border: 1px solid red;
+}
+
+.search-container{
+  text-align: center;
+  font-size: 42px;
+  font-weight: bold;
+  color: black;
+  margin-left: -25px;
+  
+}
+
+.search-box{
+  margin: 0 auto;
+  width: 410px;
+  height:300px;
+  margin-top: 46px;
+}
+
+.input{
+  padding-left: 40px;
+  font-size: 12px;
+  height: 35px;
+  margin-top: -1px;
+  border: 1px solid white;
+  background-color: whitesmoke;
+}
+
+.myUser{
+  font-size: 15px;
+  padding-left: 191px;
+  padding-top: 37px;
+
+}
+
+.dog-img{
+  height: 300px;
+  width: 300px;
+  border-radius: 50% 50%;
+  border: 2px solid whitesmoke;
+}
+
+.card{
+  border: 1px solid yellow;
+  background-color: yellow; 
+  
+}
+.card-body{
+  background-color: yellow; 
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.logo {
+  font-size: 50px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.myDogs{
+  margin-top: 50px;
 }
 
-.App-intro {
-  font-size: large;
+.paw-btn{
+  margin-left: 5px;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.dog-page{
+  background-color: yellow; 
+}
+
+.dog-register {
+  background-color: red;
+  margin-top: 10px;
+  height: 35px;
+  border: red;
+   
+}
+
+.dog-register:hover {
+  background:rgb(11, 11, 31);
+  border: rgb(11, 11, 31);
 }

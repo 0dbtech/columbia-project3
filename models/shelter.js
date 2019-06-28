@@ -1,13 +1,15 @@
 module.exports = (sequelize, type) => {
   return sequelize.define('shelter', {
-      id: {
+      ID: {
         type: type.INTEGER,
         primaryKey: true,
         autoIncrement: true
       },
-      Name: type.STRING,
-      Phone: type.INTEGER,
-      ZipCode: type.INTEGER,
+      NAME: type.STRING,
+      PHONE: type.INTEGER,
+      ZIPCODE: type.INTEGER,
       CURRENT_TIMESTAMP: type.DATE,
+      GUID: type.UUID   
+  
   })
 };
