@@ -1,7 +1,6 @@
 // Requiring our models and passport as we've configured it
 var db = require("../models");
 var passport = require("../config/passport");
-var data = require('../data');
 var dogsJson = require('../tempdb');
 module.exports = function (app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -100,7 +99,6 @@ module.exports = function (app) {
     }).catch(function (err) {
       console.log(err);
       res.json(err);
-      // res.status(422).json(err.errors[0].message);
     });
   });
   //
@@ -129,6 +127,7 @@ module.exports = function (app) {
   //find dog by id
   //returns shelter by id
   app.get("/details/:dogId", function (req, res) {
+    //modify this to return desired data.
     let SheltersRes= {
       name:'Sheler ',
       id:0,
@@ -161,6 +160,7 @@ module.exports = function (app) {
       dogRes.gender = dogObj[0].GENDER;
       console.log(dogObj[0].ID);
     });
+    
     db.shelter.findAll({
       where: {
         ID:req.params.dogId
@@ -180,7 +180,9 @@ module.exports = function (app) {
  
       });
 
-  app.post("/details/dogs/:ID", function (req, res) {
+
+
+  app.post("/details/new/:entry", function (req, res) {
     db.dog.findAll({
       where: {
         ID:req.params.ID
@@ -191,15 +193,38 @@ module.exports = function (app) {
       console.log(dogObj[0].ID);
     });
     db.shelter.findAll({
-      where: {
-        ID:req.params.ID
-      }
-      }).then(shelters => {
+
+    }).then(shelters => {
         let shelterdb = JSON.stringify(shelters);
         let shelterObj = JSON.parse(shelterdb);
         console.log(shelterObj[0].ZIPCODE);
     });
   });
+
+  app.get("/api/all", function (req, res) {
+    let dogData;
+        db.dog.findAll({}).then(response => {
+           dogData = response;
+      });
+      db.shelter.findAll({}).then(shelter_res =>{
+        let dataRes = {
+          dogData,
+          shelter_res
+        }
+        res.json(dataRes);
+    });
+  });
+
+  app.get('/details/shelterszip/:ZIPCODE', (req, res) => {
+    db.shelter.findAll({
+      where: {
+        ZIPCODE:req.params.ZIPCODE
+      }
+    }).then(shelters => {
+     console.log(shelters.data);  
+     data.controls.getShelters();
+    });
+ });
 
   app.get('/details/shelters/:ID', (req, res) => {
     db.shelter.findAll({
@@ -223,14 +248,13 @@ module.exports = function (app) {
      data.controls.getShelters();
     });
   });
-
   // app.get('/api/shelters/:ID?', (req, res) => {
   //   let query;
   //   if (req.params.ID) {
   //     query = db.Shelter.findAll({
   //       include: [
   //         { model: db.Dog, where: { id: req.params.ID } },
-  //       ]
+  //       ]d
   //     })
   //   } else {
   //     query = db.Shelter.findAll({ include: [db.Dog] })
@@ -239,4 +263,3 @@ module.exports = function (app) {
   // });
   
 };
-

@@ -11,8 +11,10 @@ class SearchComponent extends React.Component {
 
     render() {
         return (
+         
             <div>
                 <div className="search-container">
+                <h1>{this.props.children}</h1>
                     <p>Find buddies in your neighborhood</p>
                 </div>
                 <div className="search-box">
@@ -26,24 +28,24 @@ class SearchComponent extends React.Component {
                         <InputGroup.Append>
                             <Button className="search-button" variant="outline-secondary" onClick={this.handleClick}><i className="fa fa-search"></i></Button>
                         </InputGroup.Append>
-                        
-                       
-                            <Button className="dog-register" variant="primary" size="lg" block>
-                                register your dog
+
+
+                        <Button className="dog-register" variant="primary" size="lg" block>
+                            register your dog
                             </Button>
-                            
+
                     </InputGroup>
                 </div>
-                </div>
-                )
-            }
-        
+            </div>
+        )
+    }
+
     handleClick() {
-                    this.props.history.push('/dogs');
-                }
-            
-            }
-            
-            export default withRouter(SearchComponent);
-            
-            
+        this.props.history.push('/dogs');
+    }
+
+}
+
+export default withRouter(SearchComponent);
+
+

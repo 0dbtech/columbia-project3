@@ -1,7 +1,8 @@
 import React from 'react';
 
 
-function SearchComponent() {
+function SearchComponent(props) {
+    console.log(props)
     return (
         <div>
             <div className="container">
