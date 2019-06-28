@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 const DogModel = require('./models/dog');
-const ShelterModel = require('./models/Shelter');
+const ShelterModel = require('./models/shelter');
 
 const sequelize = new Sequelize('Dogs', 'root', 'root', {
   host: 'localhost',
