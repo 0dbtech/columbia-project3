@@ -2,11 +2,13 @@ import React from 'react';
 import HeaderComponent  from "../components/Header/header";
 import FooterComponent  from "../components/Footer/footer";
 import DetailsComponent from "../components/Details/details";
-import Map from "../components/GoogleMap/map";
+//import Map from "../components/GoogleMap/map";
 import { Container, Col, Row } from 'react-bootstrap';
-
+import VideoComponent from "../components/Video/video";
+import DateTimeForm from '../components/Calendar/calendar';
 
 class Details extends React.Component {
+  
   render() {
     return (
       <div className="dog-page">
@@ -19,8 +21,12 @@ class Details extends React.Component {
               <DetailsComponent></DetailsComponent>
             </Col>
             <Col>
-              <Map></Map>
+              {/* <Map></Map> */}
+              <VideoComponent></VideoComponent>
             </Col>
+          </Row>
+          <Row className="calendar-container">
+            <DateTimeForm></DateTimeForm>
           </Row>
         </Container>
         <div className="myFooter">

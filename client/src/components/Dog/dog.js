@@ -16,7 +16,7 @@ class DogComponent extends React.Component {
           <Link to={`/details/${this.props.dogsId}`}>
             <Button className="card-button" variant="primary">
               <i className="fas fa-paw"></i> 
-              <spam className='paw-btn'>PAW</spam>
+              <span className='paw-btn'>PAW</span>
             </Button>
           </Link>
         </Card.Body>
