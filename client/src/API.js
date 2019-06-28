@@ -8,5 +8,8 @@ export default {
   getAll: function() {
     return axios.get("/api/all");
   },
+  getShelterZip: function() {
+   return axios.get("/details/all");
+  },
   
 };

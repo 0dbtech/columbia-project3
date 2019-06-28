@@ -35,7 +35,7 @@ class Home extends React.Component {
           <HeaderComponent></HeaderComponent>
         </div>
         <div className="mySearch">
-          <SearchComponent>props</SearchComponent>
+          <SearchComponent></SearchComponent>
         </div>
         <div className="myFooter">
           <FooterComponent></FooterComponent>

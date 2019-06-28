@@ -180,8 +180,6 @@ module.exports = function (app) {
  
       });
 
-
-
   app.post("/details/new/:entry", function (req, res) {
     db.dog.findAll({
       where: {
