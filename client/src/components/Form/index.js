@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Row, Col, Form, FormGroup, Button } from 'react-bootstrap';
+import HeaderComponent from "../Header/header";
+import './style.css'
 
 
 var firebase = require('firebase');
@@ -132,100 +134,59 @@ class ShelterForm extends React.Component {
 
 
 
+  
   render() {
     return (
       <>
+      <div className="form-page">
 
+        <div>
+          <HeaderComponent></HeaderComponent>
+        </div>
+
+<div className="search-test">
        <Form>
-  <Form.Group as={Row} controlId="formHorizontalEmail">
-    <Form.Label column sm={2}>
-      Email
+  <Form.Group as={Row} >
+    <Form.Label column sm={1}>
+      Breed
     </Form.Label>
-    <Col sm={10}>
-      <Form.Control type="email" placeholder="Email" />
+    <Col sm={5}>
+      <Form.Control type="email" placeholder="Specify the dog breed or mix" />
     </Col>
   </Form.Group>
 
-  <Form.Group as={Row} controlId="formHorizontalPassword">
-    <Form.Label column sm={2}>
-      Password
+  <Form.Group as={Row} >
+    <Form.Label column sm={1}>
+      Breed
     </Form.Label>
-    <Col sm={10}>
-      <Form.Control type="password" placeholder="Password" />
-    </Col>
-  </Form.Group>
-  <fieldset>
-    <Form.Group as={Row}>
-      <Form.Label as="legend" column sm={2}>
-        Radios
-      </Form.Label>
-      <Col sm={10}>
-        <Form.Check
-          type="radio"
-          label="first radio"
-          name="formHorizontalRadios"
-          id="formHorizontalRadios1"
-        />
-        <Form.Check
-          type="radio"
-          label="second radio"
-          name="formHorizontalRadios"
-          id="formHorizontalRadios2"
-        />
-        <Form.Check
-          type="radio"
-          label="third radio"
-          name="formHorizontalRadios"
-          id="formHorizontalRadios3"
-        />
-      </Col>
-    </Form.Group>
-  </fieldset>
-  <Form.Group as={Row} controlId="formHorizontalCheck">
-    <Col sm={{ span: 10, offset: 2 }}>
-      <Form.Check label="Remember me" />
+    <Col sm={5}>
+      <Form.Control type="email" placeholder="Specify the dog breed or mix" />
     </Col>
   </Form.Group>
 
-  <Form.Group as={Row}>
-    <Col sm={{ span: 10, offset: 2 }}>
-      <Button type="submit">Sign in</Button>
+  <Form.Group as={Row} >
+    <Form.Label column sm={1}>
+      Breed
+    </Form.Label>
+    <Col sm={5}>
+      <Form.Control type="email" placeholder="Specify the dog breed or mix" />
     </Col>
   </Form.Group>
 
-
-  <Form.Group as={Row}>
-    <Col sm={{ span: 10, offset: 2 }}>
-      <Button type="submit">Sign in</Button>
+  <Form.Group as={Row} >
+    <Form.Label column sm={1}>
+      Breed
+    </Form.Label>
+    <Col sm={5}>
+      <Form.Control type="email" placeholder="Specify the dog breed or mix" />
     </Col>
   </Form.Group>
 
 
 
 
-  <Form.Control as={Row}>
-    <Col sm={{ span: 10, offset: 2 }}>
-      <Button type="file">Select Image</Button>
-    </Col>
-  </Form.Control>
 
-  <Form.Group as={Row}>
-    <Col sm={{ span: 10, offset: 2 }}>
-      <Button type="submit">Upload Image</Button>
-    </Col>
-  </Form.Group>
 
-  <Form.Group as={Row}>
-    <Col sm={{ span: 10, offset: 2 }}>
-      <Button type="submit">Select Video</Button>
-    </Col>
-  </Form.Group>
-
-  <Form.Group as={Row}>
-    <Col sm={{ span: 10, offset: 2 }}>
-      <Button type="submit">Upload Video</Button>
-    </Col>
-  </Form.Group>
 
       <h2>Video Upload</h2>
      <input type="file" accept="video/mp4" class="video"/>
@@ -236,7 +197,17 @@ class ShelterForm extends React.Component {
      <input type="file" accept="image/jpg" class="image"/>
      <input type="submit" onClick={this.handleImageFormSubmit} class="imgSubmit" value="upload image"/>
 
-     </Form>
+     <Form.Group as={Row}>
+    <Col sm={{ span: 10, offset: 2 }}>
+      <Button type="submit">Sign in</Button>
+    </Col>
+
+  </Form.Group>
+</Form>
+
+  </div>
+  </div>
+
     </>
     );
   }

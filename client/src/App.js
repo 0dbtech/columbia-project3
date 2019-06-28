@@ -6,6 +6,7 @@ import Dogs from './pages/dogs';
 import LogIn from "./pages/login"
 import Details from './pages/details';
 import Signup from "./pages/signup"
+import ShelterForm from "./components/Form"
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
             <Route path="/details/:dogId" component={Details} />
             <Route path="/Signin" component={LogIn} />
             <Route path="/Signup" component={Signup} />
+            <Route path="/admin" component={ShelterForm} />
           </Switch>
         </div>
       </div>
