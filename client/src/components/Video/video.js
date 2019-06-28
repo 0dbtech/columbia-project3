@@ -1,6 +1,7 @@
 import React from "react";
 import ReactPlayer from 'react-player';
 
+
 class VideoComponent extends React.Component {
     render () {
       return (
@@ -13,6 +14,8 @@ class VideoComponent extends React.Component {
           playing= {true}
           controls= {true}
           loop= {true}
+          volume = '0'
+          muted = {true}
         />
       </div>
       );
