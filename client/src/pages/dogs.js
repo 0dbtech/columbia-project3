@@ -19,7 +19,6 @@ class Dogs extends React.Component {
   }
 
   render() {
-    console.log("this.results: ", this.state.results);
     return (
       <div className="dog-page">
         <div className="myHeader">

@@ -111,7 +111,7 @@ z-index: 20;
   height: 300px;
   width: 300px;
   border-radius: 50% 50%;
-  border: 2px solid whitesmoke;
+  border: 2px solid yellow;
 }
 
 .card{
@@ -152,3 +152,12 @@ z-index: 20;
   background:rgb(11, 11, 31);
   border: rgb(11, 11, 31);
 }
+
+.myCalendar{
+  position: absolute;
+  background-color: aliceblue
+}
+.calendar-container {
+  height: 500px;
+    background: white;
+} 
