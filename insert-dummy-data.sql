@@ -1,73 +1,16 @@
-# ************************************************************
-# Sequel Pro SQL dump
-# Version 4541
-#
-# http://www.sequelpro.com/
-# https://github.com/sequelpro/sequelpro
-#
-# Host: 127.0.0.1 (MySQL 5.7.25)
-# Database: Dogs
-# Generation Time: 2019-06-26 02:14:45 +0000
-# ************************************************************
+TRUNCATE TABLE dogs;
+TRUNCATE TABLE shelters;
 
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
-
-# Dump of table dogs
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `dogs`;
-
-CREATE TABLE `dogs` (
-  `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
-  `BREED` mediumint(9) DEFAULT NULL,
-  `CURRENT_TIMESTAMP` varchar(255) DEFAULT 'CURRENT_TIME',
-  `BOOKED_TIMESTAMP` varchar(255) DEFAULT NULL,
-  `IMAGE` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
-
-LOCK TABLES `dogs` WRITE;
-/*!40000 ALTER TABLE `dogs` DISABLE KEYS */;
-
-INSERT INTO `dogs` (`id`, `BREED`, `CURRENT_TIMESTAMP`, `BOOKED_TIMESTAMP`, `IMAGE`)
+INSERT INTO `dogs` (`ID`, `BREED`,`GENDER`, `CURRENT_TIMESTAMP`, `BOOKED_TIMESTAMP`, `IMAGE`)
 VALUES
-	(1,1,'2016-01-22 00:36:12','2016-08-29 21:51:26','https://firebasestorage.googleapis.com/v0/b/paw-media.appspot.com/o/image%2Fdog1.jpg?alt=media&token=d1b67bc8-a206-4706-8779-1f8d3bd8a7b5'),
-	(2,2,'2015-12-14 16:01:59','2018-09-04 16:53:41',''),
-	(3,3,'2018-07-16 06:58:44','2019-09-13 09:02:24',''),
-	(4,4,'2018-06-12 04:51:54','2017-08-29 18:31:45',''),
-	(5,5,'2016-01-25 18:29:55','2016-03-30 13:48:58','');
-
-/*!40000 ALTER TABLE `dogs` ENABLE KEYS */;
-UNLOCK TABLES;
+	(1,0,'MALE','2015-12-14 16:01:59','2016-08-29 21:51:26','https://firebasestorage.googleapis.com/v0/b/paw-media.appspot.com/o/image%2Fdog1.jpg?alt=media&token=d1b67bc8-a206-4706-8779-1f8d3bd8a7b5'),
+	(2,2, 'MALE','2015-12-14 16:01:59','2018-09-04 16:53:41','https://firebasestorage.googleapis.com/v0/b/paw-media.appspot.com/o/image%2Fdog1.jpg?alt=media&token=d1b67bc8-a206-4706-8779-1f8d3bd8a7b5'),
+	(3,3, 'FEMALE', '2018-07-16 06:58:44','2019-09-13 09:02:24','https://firebasestorage.googleapis.com/v0/b/paw-media.appspot.com/o/image%2Fdog1.jpg?alt=media&token=d1b67bc8-a206-4706-8779-1f8d3bd8a7b5'),
+	(4,4, 'MALE','2018-06-12 04:51:54','2017-08-29 18:31:45','https://firebasestorage.googleapis.com/v0/b/paw-media.appspot.com/o/image%2Fdog1.jpg?alt=media&token=d1b67bc8-a206-4706-8779-1f8d3bd8a7b5'),
+	(5,5,'FEMALE','2016-01-25 18:29:55','2016-03-30 13:48:58','https://firebasestorage.googleapis.com/v0/b/paw-media.appspot.com/o/image%2Fdog1.jpg?alt=media&token=d1b67bc8-a206-4706-8779-1f8d3bd8a7b5');
 
 
-# Dump of table shelters
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `shelters`;
-
-CREATE TABLE `shelters` (
-  `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
-  `NAME` mediumint(9) DEFAULT NULL,
-  `ZIPCODE` varchar(10) DEFAULT NULL,
-  `CURRENT_TIMESTAMP` varchar(255) DEFAULT NULL,
-  `PHONE` varchar(100) DEFAULT NULL,
-  `GUID` varchar(36) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8;
-
-LOCK TABLES `shelters` WRITE;
-/*!40000 ALTER TABLE `shelters` DISABLE KEYS */;
-
-INSERT INTO `shelters` (`id`, `NAME`, `ZIPCODE`, `CURRENT_TIMESTAMP`, `PHONE`, `GUID`)
+INSERT INTO `shelters` (`ID`, `NAME`, `ZIPCODE`, `CURRENT_TIMESTAMP`, `PHONE`, `GUID`)
 VALUES
 	(1,1,'95248-972','2019-07-23 00:51:37','(485) 187-1995','F98210C8-4320-420B-8B94-6F0A4C5351E6'),
 	(2,2,'11225','2018-07-16 08:27:32','(126) 774-4358','67E482C7-D7AD-7EAB-A313-7CFB57B8F765'),
@@ -119,32 +62,3 @@ VALUES
 	(48,48,'14-191','2019-08-01 11:05:51','(138) 222-5028','05C5B1B0-3AE4-6EA5-A4C7-3DA75E7466E8'),
 	(49,49,'370552','2018-11-23 19:14:27','(986) 468-3463','46814BD6-DAB9-ED2E-E80B-D294BD2B0D6D'),
 	(50,50,'P76 8ZD','2020-04-22 03:46:11','(691) 893-9063','46E52615-52C3-14FB-AAF0-B7EED6FAD393');
-
-/*!40000 ALTER TABLE `shelters` ENABLE KEYS */;
-UNLOCK TABLES;
-
-
-# Dump of table Users
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `Users`;
-
-CREATE TABLE `Users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `createdAt` datetime NOT NULL,
-  `updatedAt` datetime NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

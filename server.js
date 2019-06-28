@@ -3,10 +3,11 @@ const path = require("path");
 const PORT = process.env.PORT || 8000;
 const app = express();
 // const { Dog, Shelter, Tag, User } = require('./sequelize');
-const passport = require('passport');
+const passport = require('passport'); 
 const session = require("express-session");
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const dbTest= require('./db')
 // const routes = require('./routes');
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
@@ -18,11 +19,10 @@ app.use(cors());
 app.use(session({ secret: "running elephant has broken waffle mountain", resave: true, saveUninitialized: true}));
 app.use(passport.initialize());
 app.use(passport.session());
-// app.use(routes);
+
 require('./routes/api-routes')(app);
 // require('./routes/html-routes')(app);
 
 app.listen(PORT, function() {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
-

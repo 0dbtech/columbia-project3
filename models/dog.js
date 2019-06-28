@@ -5,11 +5,11 @@ module.exports = (sequelize, type) => {
           primaryKey: true,
           autoIncrement: true
         },
-        Name: type.STRING,
-        Breed: type.STRING,
-        Gender: type.STRING,
-        Image:type.STRING,
+        BREED: type.STRING,
+        GENDER: type.STRING,
+        IMAGE:type.STRING,
         CURRENT_TIMESTAMP: type.DATE,
         BOOKED_TIMESTAMP: type.DATE,
-    });
+
+    })
 }
