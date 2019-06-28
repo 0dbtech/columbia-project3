@@ -16,13 +16,22 @@ const sequelize = new Sequelize('Dogs', 'root', 'root', {
 const Dog = DogModel(sequelize, Sequelize);
 const Shelter = ShelterModel(sequelize, Sequelize);
 
+Dog.belongsTo(Shelter);
+
+// Dog.sequelize.define('dog', {/* attributes */})
+// Shelter.sequelize.define('shelter', {/* attributes */});
+
 dbSync = () => {
-  sequelize.sync({ force: true })
+  sequelize.sync({ force: false })
     .then(() => {
       console.log(`Database & tables created!`)
     });
-}
+}    // .query('SET FOREIGN_KEY_CHECKS = 0', {raw: true})
+    // .then(function(results) {
+    //     DB.sequelize.sync({force: false});
+    // });
 
+dbSync();
 
 module.exports = {
   Dog,

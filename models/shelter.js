@@ -11,5 +11,5 @@ module.exports = (sequelize, type) => {
       CURRENT_TIMESTAMP: type.DATE,
       GUID: type.UUID   
   
-  })
+  });
 };
