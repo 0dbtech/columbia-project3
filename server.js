@@ -7,7 +7,6 @@ const passport = require('passport');
 const session = require("express-session");
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const dbTest= require('./db')
 // const routes = require('./routes');
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {

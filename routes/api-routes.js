@@ -1,6 +1,8 @@
 // Requiring our models and passport as we've configured it
 var db = require("../models");
 var passport = require("../config/passport");
+var data = require('../data');
+var dogsJson = require('../tempdb');
 module.exports = function (app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
@@ -124,42 +126,102 @@ module.exports = function (app) {
     }
   });
 
-
-  app.get("/api/dogs", function (req, res) {
+  //find dog by id
+  //returns shelter by id
+  app.get("/details/:dogId", function (req, res) {
+    let SheltersRes= {
+      name:'Sheler ',
+      id:0,
+      zipcode:0,
+      phone:0
+    };
+    let dogRes = {
+      id:0,
+      shelter:0,
+      breed:"",
+      gender:"",
+      image:"",
+      video:"",
+      booked_timestamp:0
+    };
     db.dog.findAll({
-   
-     }).then(dogs => {
-      console.log(JSON.stringify(dogs));
-    
-      /*
-        [{
-          "name": "John Doe",
-          "id": 1,
-          "createdAt": "2013-03-20T20:31:45.000Z",
-          "updatedAt": "2013-03-20T20:31:45.000Z",
-          "Instruments": [{ // 1:M and N:M association
-            "name": "Toothpick",
-            "id": 1,
-            "createdAt": null,
-            "updatedAt": null,
-            "userId": 1,
-            "Teacher": { // 1:1 association
-              "name": "Jimi Hendrix"
-            }
-          }]
-        }]
-      */
-    })
+      where: {
+        ID:req.params.dogId
+      }
+    }).then(dogs => {
+      let dogdb = JSON.stringify(dogs);
+      let dogObj = JSON.parse(dogdb);
+      dogRes.id = dogObj[0].ID;
+      dogRes.shelter = dogObj[0].ID;
+      dogRes.breed = dogObj[0].BREED;
+      dogRes.booked_timestamp = dogObj[0].BOOKED_TIMESTAMPED;
+      dogRes.gender = dogObj[0].GENDER;
+      dogRes.image = dogObj[0].IMAGE;
+      dogRes.video = dogObj[0].VIDEO;
+      dogRes.gender = dogObj[0].GENDER;
+      console.log(dogObj[0].ID);
+    });
+    db.shelter.findAll({
+      where: {
+        ID:req.params.dogId
+      }
+      }).then(shelters => {
+        let shelterdb = JSON.stringify(shelters);
+        let shelterObj = JSON.parse(shelterdb);
+        SheltersRes.zipcode = shelterObj[0].ZIPCODE;
+        SheltersRes.id = shelterObj[0].ID;
+        SheltersRes.name = 'Shelter ' + shelterObj[0].ID
+        SheltersRes.phone = shelterObj[0].PHONE;
+        console.log(SheltersRes);
+
+        }).then(()=>{
+         res.send({SheltersRes,dogRes});
+        })
+ 
+      });
+
+  app.post("/details/dogs/:ID", function (req, res) {
+    db.dog.findAll({
+      where: {
+        ID:req.params.ID
+      }
+    }).then(dogs => {
+      let dogdb = JSON.stringify(dogs);
+      let dogObj = JSON.parse(dogdb);
+      console.log(dogObj[0].ID);
+    });
+    db.shelter.findAll({
+      where: {
+        ID:req.params.ID
+      }
+      }).then(shelters => {
+        let shelterdb = JSON.stringify(shelters);
+        let shelterObj = JSON.parse(shelterdb);
+        console.log(shelterObj[0].ZIPCODE);
+    });
   });
 
-
-  app.get('/api/shelters', (req, res) => {
+  app.get('/details/shelters/:ID', (req, res) => {
     db.shelter.findAll({
-      
+      where: {
+        ID:req.params.ID
+      }
     }).then(shelters => {
-     console.log(JSON.stringify(shelters));  
+      let shelterdb = JSON.stringify(shelters);
+      let shelterObj = JSON.parse(shelterdb);
+     console.log(shelterObj);  
     });
-    
+  });
+
+  app.get('/details/shelterszip/:ZIPCODE', (req, res) => {
+    db.shelter.findAll({
+      where: {
+        ZIPCODE:req.params.ZIPCODE
+      }
+    }).then(shelters => {
+     console.log(shelters.data);  
+     data.controls.getShelters();
+    });
   });
 
   // app.get('/api/shelters/:ID?', (req, res) => {
@@ -175,6 +237,6 @@ module.exports = function (app) {
   //   }
   //   return query.then(shelters => res.json(shelters))
   // });
-
+  
 };
 
