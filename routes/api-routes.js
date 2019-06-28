@@ -152,26 +152,29 @@ module.exports = function (app) {
     })
   });
 
-  //DOGS
 
-  app.post('/api/shelters', (req, res) => {
-      console.log(res.params.json)
+  app.get('/api/shelters', (req, res) => {
+    db.shelter.findAll({
+      
+    }).then(shelters => {
+     console.log(JSON.stringify(shelters));  
+    });
+    
   });
 
-  // find dogs belonging to one user or all shelters
-  app.get('/api/shelters/:ID?', (req, res) => {
-    let query;
-    if (req.params.ID) {
-      query = db.Shelter.findAll({
-        include: [
-          { model: db.Dog, where: { id: req.params.ID } },
-        ]
-      })
-    } else {
-      query = db.Shelter.findAll({ include: [db.Dog] })
-    }
-    return query.then(shelters => res.json(shelters))
-  });
+  // app.get('/api/shelters/:ID?', (req, res) => {
+  //   let query;
+  //   if (req.params.ID) {
+  //     query = db.Shelter.findAll({
+  //       include: [
+  //         { model: db.Dog, where: { id: req.params.ID } },
+  //       ]
+  //     })
+  //   } else {
+  //     query = db.Shelter.findAll({ include: [db.Dog] })
+  //   }
+  //   return query.then(shelters => res.json(shelters))
+  // });
 
 };
 
