@@ -6,7 +6,7 @@ import SearchComponent from "../components/Search/search";
 class Home extends React.Component {
   render() {
     return (
-      <div>
+      <div className="home-page">
         <div className="myHeader">
           <HeaderComponent></HeaderComponent>
         </div>

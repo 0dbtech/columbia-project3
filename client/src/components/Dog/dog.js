@@ -5,7 +5,7 @@ import { withRouter, Link } from 'react-router-dom'
 class DogComponent extends React.Component {
   render() {
     return (
-      <Card>
+      <Card style={{ width: '18rem' }}>
         <Card.Img className="dog-img" variant="top" src={this.props.image} />
         <Card.Body>
           <Card.Title>
