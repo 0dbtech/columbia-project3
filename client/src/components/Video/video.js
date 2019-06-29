@@ -7,10 +7,8 @@ class VideoComponent extends React.Component {
       return (
       <div>
         <ReactPlayer
-          url='https://firebasestorage.googleapis.com/v0/b/paw-media.appspot.com/o/image%2Fdixie-tail-chase.mp4?alt=media&token=158a10c1-c26b-42df-a2d1-090a12e4d6c9'
+          url='https://firebasestorage.googleapis.com/v0/b/paw-media.appspot.com/o/video%2FIMG_4894.mov?alt=media&token=afa4fa87-5ac8-4d55-9357-49a41177fb71'
           className='react-player'
-          // width='100px'
-          // height='100px'
           playing= {true}
           controls= {true}
           loop= {true}

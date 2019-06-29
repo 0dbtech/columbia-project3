@@ -17,7 +17,7 @@ class DetailsComponent extends React.Component {
 
   render() {
     return (
-        <DogComponent dogsId={this.state.dogsId}
+        <DogComponent className="my-dog-details" dogsId={this.state.dogsId}
             name={fakeDogs[this.state.dogsId].name} 
             age={fakeDogs[this.state.dogsId].age} 
             breed={fakeDogs[this.state.dogsId].breed} 

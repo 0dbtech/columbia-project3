@@ -29,7 +29,7 @@ class SearchComponent extends React.Component {
                         
 
                     </InputGroup>
-                </div>
+                </div>r
                 </div>
                 )
             }
