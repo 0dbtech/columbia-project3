@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 import { Link } from "react-router-dom";
 import axios from '../axios';
+import { Container, Col, Row, Button, ButtonToolbar} from 'react-bootstrap';
+import MyVerticallyCenteredModal from '../components/Checkout/login-yes';
+import HeaderComponent  from "../components/Header/header";
+import FooterComponent  from "../components/Footer/footer";
 
 class LogIn extends Component {
   state = {
@@ -25,7 +29,13 @@ class LogIn extends Component {
   }
 
   render() {
+    let modalClose = () => this.setState({ modalShow: false });
     return (
+<>
+<div className="myHeader">
+         <HeaderComponent></HeaderComponent>
+        </div>
+
       <div className="row">
         <div className="col-md-6 col-md-offset-3">
           <h2>Login Form</h2>
@@ -46,11 +56,27 @@ class LogIn extends Component {
             </div>
             <button type="submit" className="btn btn-default" onClick={(e) => this.doLogIn(e)}>Login</button>
           </form>
+          <Button 
+                        className="dog-confirmation-container" 
+                        variant="warning"
+                        size="lg"
+                        block 
+                        onClick={() => this.setState({ modalShow: true })}>
+                        C O N F I R M 
+                      </Button>
+                      <MyVerticallyCenteredModal
+                        show={this.state.modalShow}
+                        onHide={modalClose}
+                      />
           <br/>
           <br/>
           <p>Or sign up <Link to="/signup">here</Link></p>
         </div>
       </div>
+      <div className="myFooter">
+          <FooterComponent></FooterComponent>
+        </div>
+      </>
     );
   }
 }
