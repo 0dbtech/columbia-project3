@@ -1,3 +1,5 @@
+//require('../src/assets/img/04.jpg')
+
 const fakeDogs = [{
     name : 'Tala',
     age : 2,
@@ -41,12 +43,4 @@ const fakeDogs = [{
   }
 ];
 
-const getShelters = [
-
-]
-
-
-export default {
-  fakeDogs,
-  getShelters
-}
+export default fakeDogs;

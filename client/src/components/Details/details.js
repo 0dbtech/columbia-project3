@@ -8,7 +8,7 @@ class DetailsComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state = { 
-            dogsId: 0
+            dogsId: 0 
         };
     }
   componentDidMount(){

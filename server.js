@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8000;
 const app = express();
 // const { Dog, Shelter, Tag, User } = require('./sequelize');
 const passport = require('passport'); 
@@ -20,7 +20,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 require('./routes/api-routes')(app);
-//require('./routes/html-routes')(app);
+// require('./routes/html-routes')(app);
 
 app.listen(PORT, function() {
   console.log(`🌎 ==> API server now on port ${PORT}!`);

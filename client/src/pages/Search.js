@@ -1,8 +1,7 @@
 import React from 'react';
 
 
-function SearchComponent(props) {
-    console.log(props)
+function SearchComponent() {
     return (
         <div>
             <div className="container">
@@ -37,5 +36,20 @@ function SearchComponent(props) {
             </div>
 
             );
+
+
 }
 export default SearchComponent;
+
+
+
+
+// {/* <div className="container">
+//    <div className="row">
+//        <div className="col-sm-1"><select className="form-control form-control-lg">
+//  <option>All</option>
+// </select></div>
+//        <div className="col-sm-9"><input className="form-control form-control-lg" type="text" placeholder=".form-control-lg"/></div>
+//        <div className="col-sm-1"><button type="button" className="btn btn-primary btn-lg">Large button</button></div>
+//    </div>
+// </div> */}
