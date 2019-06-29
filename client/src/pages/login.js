@@ -9,6 +9,8 @@ class LogIn extends Component {
     error: null
   };
 
+  
+
   doLogIn(e) {
     e.preventDefault();
     console.log('sending')
@@ -22,6 +24,11 @@ class LogIn extends Component {
       console.log(e);
       this.setState({error: 'Email and password didn\'t match'})
     });
+  }
+  
+  handleClick = (event) => {
+    console.log("this clicked");
+
   }
 
   render() {
@@ -44,7 +51,7 @@ class LogIn extends Component {
               <span className="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
               <span className="sr-only">Error:</span> <span className="msg">{this.state.error}</span>
             </div>
-            <button type="submit" className="btn btn-default" onClick={(e) => this.doLogIn(e)}>Login</button>
+            <li><Link to="/"> <input type="submit" onClick={this.handleClick} class="login" value="LOGIN"/></Link></li>
           </form>
           <br/>
           <br/>

@@ -66,26 +66,35 @@ module.exports = function (app) {
     }
   });
 
-  app.post("/api/login", function (req, res) {
-    passport.authenticate("local", function (err, user, info) {
-      if (err) {
-        res.status(404).json(err);
-        return;
-      }
+  app.post("/api/login",
 
-      if (user) {
-        res.status(200);
-        res.json({
-          user: user,
-          success: true
-        });
-        console.log(user);
-      } else {
-        console.log('wrong');
-        res.status(401).json(info);
-      }
-    })(req, res);
-  });
+  passport.authenticate('local', { successRedirect: '/',
+      failureRedirect: '/api/login' }));
+
+
+  //     app.post('/login', passport.authenticate('local', { successRedirect: '/',
+  //     failureRedirect: '/api/login' }));
+
+
+
+  //     if (err) {
+  //       res.status(404).json(err);
+  //       return;
+  //     }
+
+  //     if (user) {
+  //       res.status(200);
+  //       res.json({
+  //         user: user,
+  //         success: true
+  //       });
+  //       console.log(user);
+  //     } else {
+  //       console.log('wrong');
+  //       res.status(401).json(info);
+  //     }
+  //   })(req, res);
+  // });
   //
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
