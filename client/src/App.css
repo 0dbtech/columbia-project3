@@ -27,13 +27,13 @@ z-index: 20;
 }
 
 .footer-container{
-  background-color: gray;
-  height: 40px ;
+  background-color: #ffc107;;
+  height: 80px ;
   text-align: center;
-  padding-top: 8px;
+  padding-top: 23px;
   font-weight: bold;
   font-size: 20px;
-  margin-top: 452px;
+  margin-top: 30px;
 }
 
 .dog-container{
@@ -207,7 +207,7 @@ z-index: 20;
 
 }
 .dog-confirmation-container{
-
+  margin-bottom: 28px;
 }
 .dog-story{
   font-size: 12px;
@@ -217,4 +217,15 @@ z-index: 20;
 }
 .dog-story-header{
   margin:15px;
+}
+.calendar-appointment{
+  margin-top: -6px;
+  margin-bottom: 31px;
+}
+.appointment-time{
+  margin-top: -27px;
+  margin-bottom: 30px;
+}
+.mySearch{
+  height: -webkit-fill-available;
 }

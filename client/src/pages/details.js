@@ -15,14 +15,6 @@ class Details extends React.Component {
         <div className="myHeader">
          <HeaderComponent></HeaderComponent>
         </div>
-
-
-
-
-
-
-
-
         <Container className="details-page-outer-organizer">
           <Row className="details-page-inner-organizer">
             <Col className="col-8">
@@ -39,26 +31,24 @@ class Details extends React.Component {
                     <div className="dog-story-container">
                       <h1 className="dog-story-header">My Story</h1>
                       <p className="dog-story">
-                      akdfljhadsklfjadskljfha kdsjhfaksj ahfjk hfahsdfjkasdhhadslaasf
-                      Jimmy was alone and scared in the shelter. He was very shy and timid, and was afraid of everything and every one. As time progressed, his trust increased and he began to show his amazing personality! Jimmy proves that the misconceptions about shelter dogs are false, and that if given the right amount of patience and love, can transform into amazing friends.
+                      Tala was alone and scared in the shelter. He was very shy and timid, and was afraid of everything and every one. As time progressed, his trust increased and he began to show his amazing personality! Tala proves that the misconceptions about shelter dogs are false, and that if given the right amount of patience and love, can transform into amazing friends.
                       </p>
                     </div>
                   </Row>
                 </Container>
-                
             </Col>
             <Col className="col-4 dog-booking-container">
                 <Container>
                   <Row>
-                      <Map className="dog-location-container">
+                      <Map dogId={this.props.match.params.dogId} className="dog-location-container">
                       </Map>
                   </Row>
                   <Row>
                     <DateTimeForm className="dog-calendar-container"></DateTimeForm>
                   </Row>
                   <Row>
-                      <Button className="dog-confirmation-container" variant="primary" size="lg" block>
-                        BOOK ME PLEASE !
+                      <Button className="dog-confirmation-container" variant="warning" size="lg" block>
+                        C O N F I R M 
                       </Button>
                   </Row>
                 </Container>
