@@ -8,7 +8,7 @@ import VideoComponent from "../components/Video/video";
 import DateTimeForm from '../components/Calendar/calendar';
 
 class Details extends React.Component {
-  
+
   render() {
     return (
       <div className="dog-page">
