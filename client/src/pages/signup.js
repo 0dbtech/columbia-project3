@@ -53,7 +53,7 @@ class SignUp extends Component {
               <span className="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
               <span className="sr-only">Error:</span> <span className="msg">{this.state.error}</span>
             </div>
-            <button type="submit" className="btn btn-default" onClick={(e) => this.doSignUp(e)}>Sign Up</button>
+            {/* <button type="submit" className="btn btn-default" onClick={(e) => this.doSignUp(e)}>Sign Up</button> */}
           </form>
           <br/>
           <Button 

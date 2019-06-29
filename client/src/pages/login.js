@@ -54,7 +54,7 @@ class LogIn extends Component {
               <span className="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
               <span className="sr-only">Error:</span> <span className="msg">{this.state.error}</span>
             </div>
-            <button type="submit" className="btn btn-default" onClick={(e) => this.doLogIn(e)}>Login</button>
+            {/* <button type="submit" className="btn btn-default" onClick={(e) => this.doLogIn(e)}>Login</button> */}
           </form>
           <Button 
                         className="dog-confirmation-container" 
@@ -72,6 +72,9 @@ class LogIn extends Component {
           <br/>
           <p>Or sign up <Link to="/signup">here</Link></p>
         </div>
+      </div>
+      <div>
+      
       </div>
       <div className="myFooter">
           <FooterComponent></FooterComponent>

@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { Row, Col, Form, FormGroup, Button } from 'react-bootstrap';
 import HeaderComponent from "../Header/header";
+import FooterComponent from "../Footer/footer";
 import './style.css'
+
 
 
 var firebase = require('firebase');
@@ -136,6 +138,7 @@ class ShelterForm extends React.Component {
 
   
   render() {
+    
     return (
       <>
       <div className="form-page">
@@ -148,10 +151,19 @@ class ShelterForm extends React.Component {
        <Form>
   <Form.Group as={Row} >
     <Form.Label column sm={1}>
-      Breed
+      Name
     </Form.Label>
     <Col sm={5}>
-      <Form.Control type="email" placeholder="Specify the dog breed or mix" />
+      <Form.Control type="email" placeholder="What is the dog's name" />
+    </Col>
+  </Form.Group>
+
+  <Form.Group as={Row} >
+    <Form.Label column sm={1}>
+      Age
+    </Form.Label>
+    <Col sm={5}>
+      <Form.Control type="email" placeholder="Please enter age or estimaed age" />
     </Col>
   </Form.Group>
 
@@ -166,48 +178,47 @@ class ShelterForm extends React.Component {
 
   <Form.Group as={Row} >
     <Form.Label column sm={1}>
-      Breed
+      Shelter Name
     </Form.Label>
     <Col sm={5}>
-      <Form.Control type="email" placeholder="Specify the dog breed or mix" />
+      <Form.Control type="email" placeholder="Name of the Shelter where the dog is located" />
     </Col>
   </Form.Group>
 
   <Form.Group as={Row} >
     <Form.Label column sm={1}>
-      Breed
+      Zip Code
     </Form.Label>
     <Col sm={5}>
-      <Form.Control type="email" placeholder="Specify the dog breed or mix" />
+      <Form.Control type="email" placeholder="Zip code where the Shelter is located" />
     </Col>
   </Form.Group>
 
 
 
 
+      <br></br>
 
-
-
-      <h2>Video Upload</h2>
+      <h4>Video Upload</h4>
+      <div>
      <input type="file" accept="video/mp4" class="video"/>
      <input type="submit" onClick={this.handleVideoFormSubmit} class="vidSubmit" value="upload video"/>
-
-
-     <h2>Image Upload</h2>
+     </div>
+      <br></br>
+      <br></br>
+      
+     <h4>Image Upload</h4>
      <input type="file" accept="image/jpg" class="image"/>
      <input type="submit" onClick={this.handleImageFormSubmit} class="imgSubmit" value="upload image"/>
 
-     <Form.Group as={Row}>
-    <Col sm={{ span: 10, offset: 2 }}>
-      <Button type="submit">Sign in</Button>
-    </Col>
+  
 
-  </Form.Group>
+ 
 </Form>
 
   </div>
   </div>
-
+<FooterComponent></FooterComponent>
     </>
     );
   }
