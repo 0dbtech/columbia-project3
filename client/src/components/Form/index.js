@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Row, Col, Form, FormGroup, Button } from 'react-bootstrap';
+import { Row, Col, Form, FormGroup, Button, Alert } from 'react-bootstrap';
 import HeaderComponent from "../Header/header";
 import './style.css'
 
@@ -8,13 +8,15 @@ var firebase = require('firebase');
 // require('firebase/storage');
 var firebaseConfig = {
 
-  apiKey: "AIzaSyDWg5xUa_bl4UdBFPZKI0zkdqeVDVWoU_8",
-  authDomain: "paw-media.firebaseapp.com",
-  databaseURL: "https://paw-media.firebaseio.com",
-  projectId: "paw-media",
-  storageBucket: "paw-media.appspot.com",
-  messagingSenderId: "44643133731",
-  appId: "1:44643133731:web:1f1aeaf218dfb6b8"
+
+    apiKey: "AIzaSyDm3P5EmlNJSrtXiEUGWG1EM7hLdnJOLs8",
+    authDomain: "buddy-b5bf1.firebaseapp.com",
+    databaseURL: "https://buddy-b5bf1.firebaseio.com",
+    projectId: "buddy-b5bf1",
+    storageBucket: "buddy-b5bf1.appspot.com",
+    messagingSenderId: "322870274050",
+    appId: "1:322870274050:web:45179035a634f7c0"
+
 
 };
 
@@ -25,6 +27,9 @@ firebase.initializeApp(firebaseConfig);
  //global vars  
  var image = null;
  var video = null; 
+
+ //var imageURL = null;
+ //var videoURL = null;
 
  
 var storage = firebase.storage();
@@ -65,7 +70,7 @@ class ShelterForm extends React.Component {
     image = document.querySelector('input.image[type=file]').files[0];
     console.log("uploading " + image.name);
 
-
+   
 
     // var name = image.name;
 
@@ -74,8 +79,14 @@ class ShelterForm extends React.Component {
     storageRef.put(image).then(function(snapshot){
        // console.log(snapshot);
        storageRef.getDownloadURL().then(function (imageURL){
+        
            console.log(imageURL);
            console.log("send image to database")
+          //  imageURL = globalImageURL;
+          alert("Successfully Uploaded");
+           return;
+          //  console.log("globalImageURL");
+          //  console.log(globalImageURL);
        })
     })
    
@@ -112,8 +123,14 @@ class ShelterForm extends React.Component {
     storageRef.put(video).then(function(snapshot){
        // console.log(snapshot);
        storageRef.getDownloadURL().then(function (videoURL){
-           console.log(videoURL);
-           console.log("send video to database")
+        // videoURL = globalVideoURL;
+        console.log(videoURL);
+        console.log("send video to database")
+
+        alert("Successfully Uploaded");
+        return videoURL;
+        // console.log("globalImageURL");
+        // console.log(globalVideoURL);
        })
     })
 
@@ -148,10 +165,10 @@ class ShelterForm extends React.Component {
        <Form>
   <Form.Group as={Row} >
     <Form.Label column sm={1}>
-      Breed
+      Name
     </Form.Label>
     <Col sm={5}>
-      <Form.Control type="email" placeholder="Specify the dog breed or mix" />
+      <Form.Control type="email" placeholder="Specify the dog name" />
     </Col>
   </Form.Group>
 
@@ -166,19 +183,28 @@ class ShelterForm extends React.Component {
 
   <Form.Group as={Row} >
     <Form.Label column sm={1}>
-      Breed
+      Age
     </Form.Label>
     <Col sm={5}>
-      <Form.Control type="email" placeholder="Specify the dog breed or mix" />
+      <Form.Control type="email" placeholder="Specify the dog age" />
     </Col>
   </Form.Group>
 
   <Form.Group as={Row} >
     <Form.Label column sm={1}>
-      Breed
+      Shelter Name
     </Form.Label>
     <Col sm={5}>
-      <Form.Control type="email" placeholder="Specify the dog breed or mix" />
+      <Form.Control type="email" placeholder="Specify the shelter name" />
+    </Col>
+  </Form.Group>
+
+  <Form.Group as={Row} >
+    <Form.Label column sm={1}>
+      Shelter Address
+    </Form.Label>
+    <Col sm={5}>
+      <Form.Control type="email" placeholder="Specify the shelter address" />
     </Col>
   </Form.Group>
 
@@ -188,18 +214,18 @@ class ShelterForm extends React.Component {
 
 
 
-      <h2>Video Upload</h2>
+      {/* <h2>Video Upload</h2> */}
      <input type="file" accept="video/mp4" class="video"/>
      <input type="submit" onClick={this.handleVideoFormSubmit} class="vidSubmit" value="upload video"/>
 
 
-     <h2>Image Upload</h2>
+     {/* <h2>Image Upload</h2> */}
      <input type="file" accept="image/jpg" class="image"/>
      <input type="submit" onClick={this.handleImageFormSubmit} class="imgSubmit" value="upload image"/>
 
      <Form.Group as={Row}>
     <Col sm={{ span: 10, offset: 2 }}>
-      <Button type="submit">Sign in</Button>
+      <Button type="submit">Submit</Button>
     </Col>
 
   </Form.Group>

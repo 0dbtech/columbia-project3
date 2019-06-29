@@ -11,7 +11,7 @@ class VideoComponent extends React.Component {
           className='react-player'
           playing= {true}
           controls= {true}
-          loop= {true}
+          loop= {false}
           volume = '0'
           muted = {true}
         />
