@@ -5,6 +5,7 @@ import DogComponent from "../components/Dog/dog";
 import { CardDeck, Card } from 'react-bootstrap';
 import { withRouter } from 'react-router-dom';
 import fakeDogs from '../FakeDataBase';
+import Map from "../components/GoogleMap/map";
 
 class Dogs extends React.Component {
   constructor(props) {
@@ -27,8 +28,11 @@ class Dogs extends React.Component {
         <div className="myDogs">
           {this.state.results}
         </div>
+        <div>
+          <Map></Map>
+        </div>
         <div className="myFooter">
-        <FooterComponent />
+          <FooterComponent />
         </div>
       </div>
     );

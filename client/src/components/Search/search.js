@@ -46,18 +46,13 @@ class SearchComponent extends React.Component {
                         />
                         <InputGroup.Append>
                             <Button onClick={this.handleClick} className="search-button" variant="outline-secondary" onClick={this.handleClick}><i className="fa fa-search"></i></Button>
-                        </InputGroup.Append>
-
-
-                        <Button  className="dog-register" variant="primary" size="lg" block>
-                            register your dog
-                            </Button>
+                        </InputGroup.Append>                        
 
                     </InputGroup>
                 </div>
-            </div>
-        )
-    }
+                </div>
+                )
+            }
 
     handleClick() {
         this.props.history.push('/dogs');
