@@ -3,13 +3,21 @@ import HeaderComponent  from "../components/Header/header";
 import FooterComponent  from "../components/Footer/footer";
 import DetailsComponent from "../components/Details/details";
 import Map from "../components/GoogleMap/map";
-import { Container, Col, Row, Button} from 'react-bootstrap';
+import { Container, Col, Row, Button, ButtonToolbar} from 'react-bootstrap';
 import VideoComponent from "../components/Video/video";
 import DateTimeForm from '../components/Calendar/calendar';
+import MyVerticallyCenteredModal from '../components/Checkout/checkout';
 
 class Details extends React.Component {
-  
+  constructor(props) {
+    super(props);
+    this.state = { 
+      modalShow: false 
+    };
+  }
+
   render() {
+    let modalClose = () => this.setState({ modalShow: false });
     return (
       <div className="dog-page">
         <div className="myHeader">
@@ -47,9 +55,20 @@ class Details extends React.Component {
                     <DateTimeForm className="dog-calendar-container"></DateTimeForm>
                   </Row>
                   <Row>
-                      <Button className="dog-confirmation-container" variant="warning" size="lg" block>
+
+                      <Button 
+                        className="dog-confirmation-container" 
+                        variant="warning"
+                        size="lg"
+                        block 
+                        onClick={() => this.setState({ modalShow: true })}>
                         C O N F I R M 
                       </Button>
+                      <MyVerticallyCenteredModal
+                        show={this.state.modalShow}
+                        onHide={modalClose}
+                      />
+
                   </Row>
                 </Container>
             </Col>
