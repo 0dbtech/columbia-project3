@@ -218,7 +218,7 @@ class ShelterForm extends React.Component {
 
   </div>
   </div>
-<FooterComponent></FooterComponent>
+
     </>
     );
   }

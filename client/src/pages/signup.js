@@ -71,9 +71,7 @@ class SignUp extends Component {
           <p>Or log in <Link to="/login">here</Link></p>
         </div>
       </div>
-      <div className="myFooter">
-          <FooterComponent></FooterComponent>
-        </div>
+   
       </>
     );
   }

@@ -76,9 +76,7 @@ class LogIn extends Component {
       <div>
       
       </div>
-      <div className="myFooter">
-          <FooterComponent></FooterComponent>
-        </div>
+
       </>
     );
   }
