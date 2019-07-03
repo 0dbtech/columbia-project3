@@ -19,7 +19,8 @@ class Dogs extends React.Component {
   componentDidMount() {
     axios.get('http://localhost:8000/api/all').then(res => {
       console.log(res);
-      this.setState({dogs:res.data});
+      this.setState({dogs:res.data.dogData});
+      console.log(this.state.dogs)
     });
   }
 
