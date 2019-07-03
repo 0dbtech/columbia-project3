@@ -6,13 +6,21 @@ import { CardDeck, Card } from 'react-bootstrap';
 import { withRouter } from 'react-router-dom';
 import fakeDogs from '../FakeDataBase';
 import Map from "../components/GoogleMap/map";
-
+import axios from 'axios';
 class Dogs extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
-      results: [] 
+      results: [],
+      dogs:[]
     };
+  }
+
+  componentDidMount() {
+    axios.get('/details/3').then(res => {
+      console.log(res);
+      this.setState({dogs:res.data});
+    });
   }
 
   componentWillMount() {
