@@ -123,3 +123,13 @@ UNLOCK TABLES;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+INSERT INTO `dogs` (`ID`, `NAME`, `BREED`, `SHELTER`, `AGE`, `GENDER`, `CURRENT_TIMESTAMP`, `BOOKED_TIMESTAMP`, `IMAGE`, `createdAt`, `updatedAt`, `VIDEO`)
+VALUES
+	(1, 'Tala', 'Golden Retriever', 1, 2, 'MALE', '2015-12-14 16:01:59', '2016-08-29 21:51:26', 'https://firebasestorage.googleapis.com/v0/b/paw-media.appspot.com/o/image%2Fdog1.jpg?alt=media&token=d1b67bc8-a206-4706-8779-1f8d3bd8a7b5', '2015-12-14 16:01:59', NULL, 'https://firebasestorage.googleapis.com/v0/b/paw-media.appspot.com/o/image%2Fdog1.jpg?alt=media&token=d1b67bc8-a206-4706-8779-1f8d3bd8a7b5'),
+	(2, 'Boo', 'Pitpull', 2, 5, 'MALE', '2015-12-14 16:01:59', '2018-09-04 16:53:41', 'https://t2.ea.ltmcdn.com/en/images/9/0/0/img_names_for_pit_bull_dogs_9_600.jpg', '2015-12-14 16:01:59', NULL, 'https://firebasestorage.googleapis.com/v0/b/paw-media.appspot.com/o/image%2Fdog1.jpg?alt=media&token=d1b67bc8-a206-4706-8779-1f8d3bd8a7b5'),
+	(3, 'Zouzou', 'Beagle', 3, 8, 'FEMALE', '2018-07-16 06:58:44', '2019-09-13 09:02:24', 'http://static.ddmcdn.com/en-us/apl/breedselector/images/breed-selector/dogs/breeds/beagle_04_lg.jpg', '2018-07-16 06:58:44', NULL, 'https://firebasestorage.googleapis.com/v0/b/paw-media.appspot.com/o/image%2Fdog1.jpg?alt=media&token=d1b67bc8-a206-4706-8779-1f8d3bd8a7b5'),
+	(4, 'Corgi', 'Corgi', 4, 4, 'MALE', '2018-06-12 04:51:54', '2017-08-29 18:31:45', 'https://images2.minutemediacdn.com/image/upload/c_crop,h_1194,w_2119,x_0,y_70/f_auto,q_auto,w_1100/v1554738239/shape/mentalfloss/63484-istock-533859316.jpg', '2018-07-16 06:58:44', NULL, 'https://firebasestorage.googleapis.com/v0/b/paw-media.appspot.com/o/image%2Fdog1.jpg?alt=media&token=d1b67bc8-a206-4706-8779-1f8d3bd8a7b5'),
+	(5, 'Sky', 'Husky', 5, 3, 'FEMALE', '2016-01-25 18:29:55', '2016-03-30 13:48:58', 'https://cdn.pixabay.com/photo/2018/05/07/10/48/husky-3380548_960_720.jpg', '2016-01-25 18:29:55', NULL, 'https://firebasestorage.googleapis.com/v0/b/paw-media.appspot.com/o/image%2Fdog1.jpg?alt=media&token=d1b67bc8-a206-4706-8779-1f8d3bd8a7b5'),
+	(6, 'Prince', 'Labradoodle', 6, 4, 'FEMALE', '2016-01-25 18:29:55', '2016-03-30 13:48:58', 'https://thenypost.files.wordpress.com/2018/09/85327728.jpg?quality=90&strip=all&w=618&h=410&crop=1', '2016-01-25 18:29:55', NULL, 'https://firebasestorage.googleapis.com/v0/b/paw-media.appspot.com/o/image%2Fdog1.jpg?alt=media&token=d1b67bc8-a206-4706-8779-1f8d3bd8a7b5');

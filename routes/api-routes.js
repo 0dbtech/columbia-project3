@@ -222,6 +222,26 @@ module.exports = function (app) {
     });
   });
 
+  app.get("/details/zipcodes", function (req, res) {
+    //modify this to return desired data.
+    let SheltersRes= {
+      name:'Sheler ',
+      id:0,
+      zipcode:0,
+      phone:0
+    };
+    db.shelter.findAll({
+      }).then(shelters => {
+        let shelterdb = JSON.stringify(shelters);
+        let shelterObj = JSON.parse(shelterdb);
+        SheltersRes.zipcode = shelterObj[0].ZIPCODE;
+        console.log(SheltersRes);
+        }).then(()=>{
+         res.send({SheltersRes});
+        })
+ 
+      });
+
   app.get('/details/shelterszip/:ZIPCODE', (req, res) => {
     db.shelter.findAll({
       where: {
