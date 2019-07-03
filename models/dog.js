@@ -6,6 +6,7 @@ module.exports = (sequelize, type) => {
       autoIncrement: true
     },
     BREED: type.STRING,
+    NAME: type.STRING,
     GENDER: type.STRING,
     IMAGE: type.STRING,
     CURRENT_TIMESTAMP: type.DATE,
