@@ -7,9 +7,11 @@ import LogIn from "./pages/login"
 import Details from './pages/details';
 import Signup from "./pages/signup"
 import ShelterForm from "./components/Form"
-
+import API from './utils/API';
 class App extends Component {
+
   render() {
+    console.log(API)
     return (
       <div className="App">
         <div className="App-intro">
