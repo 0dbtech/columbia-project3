@@ -126,45 +126,34 @@ class SearchComponent extends React.Component {
     }
 
     return (
-
-
       <div>
-        <div className="search-container">
+      <div className="search-container">
+      <h1>{this.props.children}</h1>
+      {this.state.text}
           <p>Find buddies in your neighborhood</p>
-        </div>
-        <div className="search-box">
-
-
-            {/* <input
-              style={inputGroupStyle}
-              type="text"
-              onChange={onChange}
+      </div>
+      <div className="search-box">
+          <InputGroup className="mb-3">
+              <i className="fas fa-map-marker-alt icon" aria-hidden="true"></i>
+              <FormControl onChange={this.handleChange} className="input"
+                  placeholder="zip code"
+                  aria-label="zip code"
+                  aria-describedby="basic-addon2"
+                  onChange={onChange}
               onKeyDown={onKeyDown}
               value={userInput}
-            />
-            {suggestionsListComponent}
-          </InputGroup> */}
 
-<div class="input-group mb-3">
-  <input 
-  type="text" 
-  onChange={onChange}
-    onKeyDown={onKeyDown}
-    value={userInput}
-  class="form-control" placeholder="Zip Code" aria-label="Zip Code" aria-describedby="basic-addon2" />
+              />
+              <InputGroup.Append>
+                  <Button onClick={this.handleClick} className="search-button" variant="outline-secondary" onClick={this.handleClick}><i className="fa fa-search"></i></Button>
+              </InputGroup.Append>                        
+          </InputGroup>
+          {suggestionsListComponent}
 
-  <div class="input-group-append">
-    <button
-  
-     class="btn btn-outline-secondary" type="button">Search</button>
-</div> 
-
-</div>
-              {suggestionsListComponent}
-
-</div>
-</div>
-    );
+      </div>
+      
+      </div>
+    )
   }
   
 
