@@ -134,27 +134,39 @@ class SearchComponent extends React.Component {
         </div>
         <div className="search-box">
 
-            <i className="fas fa-map-marker-alt icon" aria-hidden="true"></i>
-            <InputGroup style={inputGroupStyle}>
 
-        <input
-        style={inputGroupStyle}
-          type="text"
-          onChange={onChange}
-          onKeyDown={onKeyDown}
-          value={userInput}
-        />
-        {suggestionsListComponent}
-        </InputGroup>
+            {/* <input
+              style={inputGroupStyle}
+              type="text"
+              onChange={onChange}
+              onKeyDown={onKeyDown}
+              value={userInput}
+            />
+            {suggestionsListComponent}
+          </InputGroup> */}
 
-            <InputGroup.Append>
-              <Button className="search-button" variant="outline-secondary" onClick={this.handleClick}><i className="fa fa-search"></i></Button>
-            </InputGroup.Append>
+<div class="input-group mb-3">
+  <input 
+  type="text" 
+  onChange={onChange}
+    onKeyDown={onKeyDown}
+    value={userInput}
+  class="form-control" placeholder="Zip Code" aria-label="Zip Code" aria-describedby="basic-addon2" />
+
+  <div class="input-group-append">
+    <button
+  
+     class="btn btn-outline-secondary" type="button">Search</button>
+</div> 
+
 </div>
+              {suggestionsListComponent}
 
+</div>
 </div>
     );
   }
+  
 
   handleClick() {
     this.props.history.push('/dogs');
@@ -162,8 +174,8 @@ class SearchComponent extends React.Component {
 
 }
 const inputGroupStyle = {
-  width:'200px',
-  margin:' 0 auto',
+  width: '200px',
+  margin: ' 0 auto',
   float: 'none'
 }
 
