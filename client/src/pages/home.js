@@ -37,8 +37,7 @@ class Home extends React.Component {
           <HeaderComponent></HeaderComponent>
         </div>
         <div className="mySearch">
-        <Autocomplete suggestions={this.state.sheltersZipCodes} />
-          <SearchComponent></SearchComponent>
+          <SearchComponent suggestions={this.state.sheltersZipCodes} ></SearchComponent>
         </div>
         <div className="myFooter">
           <FooterComponent></FooterComponent>
