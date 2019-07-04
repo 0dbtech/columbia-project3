@@ -133,9 +133,10 @@ class SearchComponent extends React.Component {
           <p>Find buddies in your neighborhood</p>
         </div>
         <div className="search-box">
-        <InputGroup style={inputGroupStyle}>
 
             <i className="fas fa-map-marker-alt icon" aria-hidden="true"></i>
+            <InputGroup style={inputGroupStyle}>
+
         <input
         style={inputGroupStyle}
           type="text"
@@ -144,12 +145,13 @@ class SearchComponent extends React.Component {
           value={userInput}
         />
         {suggestionsListComponent}
+        </InputGroup>
+
             <InputGroup.Append>
               <Button className="search-button" variant="outline-secondary" onClick={this.handleClick}><i className="fa fa-search"></i></Button>
             </InputGroup.Append>
-            </InputGroup>
-
 </div>
+
 </div>
     );
   }
@@ -160,7 +162,9 @@ class SearchComponent extends React.Component {
 
 }
 const inputGroupStyle = {
-  width:'200px'
+  width:'200px',
+  margin:' 0 auto',
+  float: 'none'
 }
 
 export default withRouter(SearchComponent);
