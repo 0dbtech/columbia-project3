@@ -3,19 +3,18 @@ import HeaderComponent from "../components/Header/header";
 import FooterComponent from "../components/Footer/footer";
 import SearchComponent from "../components/Search/search";
 import axios from "axios";
-import autocomplete from '../components/autocomplete';
-import Autocomplete from '../components/autocomplete';
+import RealDataBase from "../RealDataBase";
 class Home extends React.Component {
   //ToDo add constructor, state, component did mount and axios function to store shelters in state.
   constructor(props) {
     super(props);
     this.state = { 
-      shelters: [],
       sheltersZipCodes: []
     };
   }
 
   componentDidMount() {
+    RealDataBase.getDogs();
     const shelterZipCodeArray=[];
     axios.get('http://localhost:8000/api/all').then(res => {
       console.log(res);

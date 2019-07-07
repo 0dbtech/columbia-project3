@@ -5,6 +5,7 @@ import FooterComponent from "../Footer/footer";
 import './style.css'
 
 
+let imgURLVar = "";
 
 var firebase = require('firebase');
 // require('firebase/storage');
@@ -27,7 +28,6 @@ firebase.initializeApp(firebaseConfig);
  //global vars  
  var image = null;
  var video = null; 
-
  
 var storage = firebase.storage();
 
@@ -36,6 +36,27 @@ var storage = firebase.storage();
 
 
 class ShelterForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      imageURL:'',
+      videoURL:'',
+      Name:'',
+      Breed:'',
+      shelterName:'',
+      zipCode:'',
+      gender:'male',
+      age:0
+    }
+    this.handleNameChange = this.handleNameChange.bind(this);
+    this.handleAgeChange = this.handleAgeChange.bind(this);
+    this.handleBreedChange = this.handleBreedChange.bind(this);
+    this.handleSheleterNameChange = this.handleSheleterNameChange.bind(this);
+    this.handleZipCodeChange = this.handleZipCodeChange.bind(this);
+    this.handleSheleterNameChange = this.handleSheleterNameChange.bind(this);
+    this.handleVideoFormSubmit = this.handleVideoFormSubmit.bind(this);
+    this.handleImageFormSubmit = this.handleImageFormSubmit.bind(this);
+  }
   // Setting the initial values of this.state.username and this.state.password
   // state = {
   //   username: "",
@@ -58,7 +79,7 @@ class ShelterForm extends React.Component {
 
 
 
-  // };
+  // };  
 
   // When the form is submitted, prevent the default event and alert the username and password
   handleImageFormSubmit = (event) => {
@@ -68,19 +89,23 @@ class ShelterForm extends React.Component {
     console.log("uploading " + image.name);
 
 
-
     // var name = image.name;
 
     var storageRef = storage.ref(`/image/${image.name}`);
 
-    storageRef.put(image).then(function(snapshot){
+    storageRef.put(image).then(snapshot => {
        // console.log(snapshot);
-       storageRef.getDownloadURL().then(function (imageURL){
-           console.log(imageURL);
-           console.log("send image to database")
-       })
+       storageRef.getDownloadURL().then(imageURL => {
+        this.setState({
+          imageURL: imageURL
+        });  
+                   console.log("send image to database")
+       });
     })
-   
+    
+  
+      
+
 
    // var name = image.name;
 
@@ -101,23 +126,24 @@ class ShelterForm extends React.Component {
   handleVideoFormSubmit = (event) => {
     event.preventDefault();
 
-   
-
-
     video = document.querySelector('input.video[type=file]').files[0];
     console.log("uploading " + video.name);
   
     // var name = video.name;
 
     var storageRef = storage.ref(`/video/${video.name}`);
-
-    storageRef.put(video).then(function(snapshot){
+    let videoURLVar;
+    storageRef.put(video).then(snapshot => {
        // console.log(snapshot);
-       storageRef.getDownloadURL().then(function (videoURL){
-           console.log(videoURL);
-           console.log("send video to database")
-       })
-    })
+       storageRef.getDownloadURL().then(videoURL => {
+         videoURLVar = videoURL;
+         this.setState({
+          videoURL:videoURL
+      });
+           console.log("send video to database");
+       });
+ 
+    });
 
    // var name = image.name;
 
@@ -135,6 +161,60 @@ class ShelterForm extends React.Component {
   };
 
 
+  handleSave = () => {
+    fetch('/admin/api/dogs', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        gender: this.state.gender,
+        imageURL: this.state.imageURL,
+        videoURL: this.state.videoURL,
+        zipCode: this.state.zipCode,
+        shelterName:this.state.shelterName,
+        age:this.state.age,
+        name:this.state.Name,
+        Breed: this.state.Breed
+      })
+    });
+  }
+
+  handleCancel = () => {
+    console.log("cancel");
+  }
+
+  handleAgeChange(event) {
+    this.setState({
+        age: event.target.value,
+    });
+}
+
+handleSheleterNameChange(event) {
+  this.setState({
+      shelterName: event.target.value,
+  });
+}
+
+
+handleBreedChange(event) {
+  this.setState({
+      Breed: event.target.value,
+  });
+}
+
+handleZipCodeChange(event) {
+  this.setState({
+      zipCode: event.target.value,
+  });
+}
+
+handleNameChange(event) {
+  this.setState({
+      Name: event.target.value,
+  });
+}
 
   
   render() {
@@ -154,7 +234,7 @@ class ShelterForm extends React.Component {
       Name
     </Form.Label>
     <Col sm={5}>
-      <Form.Control type="email" placeholder="What is the dog's name" />
+      <Form.Control onChange={this.handleNameChange} type="email" placeholder="What is the dog's name" />
     </Col>
   </Form.Group>
 
@@ -163,7 +243,7 @@ class ShelterForm extends React.Component {
       Age
     </Form.Label>
     <Col sm={5}>
-      <Form.Control type="email" placeholder="Please enter age or estimaed age" />
+      <Form.Control onChange={this.handleAgeChange} type="email" placeholder="Please enter age or estimated age" />
     </Col>
   </Form.Group>
 
@@ -172,7 +252,7 @@ class ShelterForm extends React.Component {
       Breed
     </Form.Label>
     <Col sm={5}>
-      <Form.Control type="email" placeholder="Specify the dog breed or mix" />
+      <Form.Control onChange={this.handleBreedChange} type="email" placeholder="Specify the dog breed or mix" />
     </Col>
   </Form.Group>
 
@@ -181,7 +261,7 @@ class ShelterForm extends React.Component {
       Shelter Name
     </Form.Label>
     <Col sm={5}>
-      <Form.Control type="email" placeholder="Name of the Shelter where the dog is located" />
+      <Form.Control onChange={this.handleSheleterNameChange} type="email" placeholder="Name of the Shelter where the dog is located" />
     </Col>
   </Form.Group>
 
@@ -190,7 +270,7 @@ class ShelterForm extends React.Component {
       Zip Code
     </Form.Label>
     <Col sm={5}>
-      <Form.Control type="email" placeholder="Zip code where the Shelter is located" />
+      <Form.Control onChange={this.handleZipCodeChange} type="email" placeholder="Zip code where the Shelter is located" />
     </Col>
   </Form.Group>
 
@@ -218,7 +298,8 @@ class ShelterForm extends React.Component {
 
   </div>
   </div>
-
+  <button onClick={this.handleSave}> Save </button>
+  <button onClick={this.handleCancel}> Cancel </button>
     </>
     );
   }

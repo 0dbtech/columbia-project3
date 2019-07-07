@@ -9,7 +9,7 @@ CREATE TABLE `dogs` (
   `createdAt` datetime DEFAULT NULL,
   `updatedAt` datetime DEFAULT NULL,
   `VIDEO` varchar(255) DEFAULT '',
-  `SHELTER` smallint(6) DEFAULT NULL,
+  `SHELTER` varchar(255) DEFAULT NULL,
   `NAME` varchar(255) DEFAULT NULL,
   `AGE` int(11) DEFAULT NULL,
   PRIMARY KEY (`ID`)
@@ -26,7 +26,7 @@ CREATE TABLE `shelters` (
   `createdAt` datetime DEFAULT NULL,
   `updatedAt` datetime DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- Create syntax for TABLE 'Users'
 CREATE TABLE `Users` (

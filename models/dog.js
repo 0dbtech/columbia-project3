@@ -12,6 +12,8 @@ module.exports = (sequelize, type) => {
     CURRENT_TIMESTAMP: type.DATE,
     VIDEO: type.STRING,
     BOOKED_TIMESTAMP: type.DATE,
-    SHELTER:type.INTEGER
+    SHELTER:type.STRING,
+    AGE: type.STRING,
+    ZIPCODE:type.INTEGER
   });
 };

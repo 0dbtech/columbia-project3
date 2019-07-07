@@ -275,18 +275,32 @@ module.exports = function (app) {
      data.controls.getShelters();
     });
   });
-  // app.get('/api/shelters/:ID?', (req, res) => {
-  //   let query;
-  //   if (req.params.ID) {
-  //     query = db.Shelter.findAll({
-  //       include: [
-  //         { model: db.Dog, where: { id: req.params.ID } },
-  //       ]d
-  //     })
-  //   } else {
-  //     query = db.Shelter.findAll({ include: [db.Dog] })
-  //   }
-  //   return query.then(shelters => res.json(shelters))
-  // });
+
+  //Create a dog
+  app.post('/admin/api/dogs', (req, res) => {
+    let videourl = req.videoURL;
+    db.dog.create({
+      GENDER: req.body.gender,
+      IMAGE: req.body.imageURL,
+      VIDEO: req.body.videoURL,
+      SHELTER: req.body.shelterName,
+      ZIPCODE: req.body.zipCode,
+      AGE: req.body.age,
+      NAME: req.body.name,
+      BREED:req.body.Breed
   
+    })
+        .then(dog => res.json(dog));
+      //  db.Sync();
+});
+
+app.post('/api/dogs:dogId', (req, res) => {
+  const videoURL = req.videoURL
+  // either find a tag with name or create a new one
+  db.Dog.findById(body.dogId)
+      .then(() => Dog.create(body))
+      .then(dog => Dog.findOne({ where: {id: dog.id}, include: [Dog]}))
+      .then(blogWithAssociations => res.json(blogWithAssociations))
+      .catch(err => res.status(400).json({ err: `User with id = [${body.userId}] doesn\'t exist.`}))
+})
 };
