@@ -189,6 +189,40 @@ module.exports = function (app) {
  
       });
 
+      //Return dog by searching by zipcode.
+      app.get("/details/:zipcode", function (req, res) {
+        let dogRes = {
+          id:0,
+          age:0,
+          shelter:"",
+          breed:"",
+          gender:"",
+          imageURL:"",
+          videoURL:"",
+          booked_timestamp:0
+        };
+        db.dog.findAll({
+          where: {
+            ZIPCODE:req.params.zipcode
+          }
+        }).then(dogs => {
+          let dogdb = JSON.stringify(dogs);
+          let dogObj = JSON.parse(dogdb);
+          dogRes.id = dogObj[0].ID;
+          dogRes.shelter = dogObj[0].ID;
+          dogRes.breed = dogObj[0].BREED;
+          dogRes.booked_timestamp = dogObj[0].BOOKED_TIMESTAMPED;
+          dogRes.gender = dogObj[0].GENDER;
+          dogRes.image = dogObj[0].IMAGE;
+          dogRes.video = dogObj[0].VIDEO;
+          dogRes.gender = dogObj[0].GENDER;
+          console.log(dogObj[0].ID);
+            }).then(()=>{
+             res.send({dogs});
+            })
+     
+          });
+
   app.post("/details/new/:entry", function (req, res) {
     db.dog.findAll({
       where: {
@@ -209,18 +243,11 @@ module.exports = function (app) {
   });
 
   app.get("/api/all", function (req, res) {
-    let dogData;
         db.dog.findAll({}).then(response => {
-           dogData = response;
+          res.json(response)
       });
-      db.shelter.findAll({}).then(shelter_res =>{
-        let dataRes = {
-          dogData,
-          shelter_res
-        }
-        res.json(dataRes);
     });
-  });
+
 
   app.get("/details/zipcodes", function (req, res) {
     //modify this to return desired data.
@@ -242,16 +269,7 @@ module.exports = function (app) {
  
       });
 
-  app.get('/details/shelterszip/:ZIPCODE', (req, res) => {
-    db.shelter.findAll({
-      where: {
-        ZIPCODE:req.params.ZIPCODE
-      }
-    }).then(shelters => {
-     console.log(shelters.data);  
-     data.controls.getShelters();
-    });
- });
+
 
   app.get('/details/shelters/:ID', (req, res) => {
     db.shelter.findAll({
@@ -265,15 +283,16 @@ module.exports = function (app) {
     });
   });
 
+  //Find dog by shelter zip code.
   app.get('/details/shelterszip/:ZIPCODE', (req, res) => {
-    db.shelter.findAll({
+    db.dog.findAll({
       where: {
         ZIPCODE:req.params.ZIPCODE
       }
-    }).then(shelters => {
-     console.log(shelters.data);  
-     data.controls.getShelters();
-    });
+    }).then(response => {
+     console.log(response);  
+     res.send(response)
+      });
   });
 
   //Create a dog

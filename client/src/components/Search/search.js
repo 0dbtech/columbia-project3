@@ -3,7 +3,7 @@ import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import { InputGroup, FormControl, Button } from 'react-bootstrap';
 import { withRouter } from 'react-router-dom'
-
+import RealDataBase from '../../RealDataBase';
 class SearchComponent extends React.Component {
   static propTypes = {
     suggestions: PropTypes.instanceOf(Array)
@@ -158,6 +158,7 @@ class SearchComponent extends React.Component {
   
 
   handleClick() {
+    RealDataBase.currentZip = this.state.userInput
     this.props.history.push('/dogs');
   }
 

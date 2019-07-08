@@ -7,22 +7,32 @@ import { withRouter } from 'react-router-dom';
 import fakeDogs from '../FakeDataBase';
 import Map from "../components/GoogleMap/map";
 import axios from 'axios';
+import realDogs from '../RealDataBase';
+import RealDataBase from '../RealDataBase';
 class Dogs extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
       results: [],
+      zip:'',
       dogs:[]
     };
   }
 
   componentDidMount() {
-    axios.get('http://localhost:8000/api/all').then(res => {
-      console.log(res);
-      this.setState({dogs:res.data.dogData});
-      console.log(this.state.dogs)
-    });
-  }
+    
+    // axios.get('http://localhost:8000/api/all').then(res => {
+    //   console.log(res);
+    //   this.setState({dogs:res.data.dogData});
+    //   console.log(this.state.dogs)
+    // });
+    this.setState({
+      zip:this.props.zip,
+      dogs:realDogs.getDogsByZip(RealDataBase.currentZip)
+  });
+  console.log(this.state.zip)
+  console.log(realDogs.getDogsByZip(RealDataBase.currentZip))
+}
 
   componentWillMount() {
     this.setState({ results: this.createDogCardDecks()});
