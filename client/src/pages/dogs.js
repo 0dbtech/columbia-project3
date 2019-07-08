@@ -7,8 +7,8 @@ import { withRouter } from 'react-router-dom';
 import fakeDogs from '../FakeDataBase';
 import Map from "../components/GoogleMap/map";
 import axios from 'axios';
-import realDogs from '../RealDataBase';
 import RealDataBase from '../RealDataBase';
+import dogResults from '../RealDataBase';
 class Dogs extends React.Component {
   constructor(props) {
     super(props);
@@ -20,7 +20,7 @@ class Dogs extends React.Component {
   }
 
   componentDidMount() {
-    
+   
     // axios.get('http://localhost:8000/api/all').then(res => {
     //   console.log(res);
     //   this.setState({dogs:res.data.dogData});
@@ -28,14 +28,42 @@ class Dogs extends React.Component {
     // });
     this.setState({
       zip:this.props.zip,
-      dogs:realDogs.getDogsByZip(RealDataBase.currentZip)
+      dogs:RealDataBase.getDogsByZip(RealDataBase.currentZip)
   });
   console.log(this.state.zip)
-  console.log(realDogs.getDogsByZip(RealDataBase.currentZip))
+  console.log(RealDataBase.getDogsByZip(RealDataBase.currentZip))
+  console.log(dogResults);
+  this.setState({ results: this.createDogCardDecks()});
+
 }
 
   componentWillMount() {
-    this.setState({ results: this.createDogCardDecks()});
+  }
+
+  populateDeck() {
+    console.log("buttonclicked")
+console.log(dogResults.dogResults)
+    let table = []
+    let k = 0
+    for (let i = 0; i < dogResults.dogResults.length; i++) {
+      let children = []
+      for (let j = 0; j < 3; j++) {
+        if(dogResults.dogResults[k])
+          children.push(<DogComponent 
+            key={k} 
+            dogsId={k} 
+            name={dogResults.dogResults[k].NAME} 
+            age={dogResults.dogResults[k].AGE} 
+            breed={dogResults.dogResults[k].BREED} image={dogResults.dogResults[k].IMAGE}></DogComponent>)
+        else
+          children.push(<Card></Card>)
+        k++
+        i=k-1;
+      }
+      table.push(<CardDeck>{children}</CardDeck>)
+    }
+    return table
+  
   }
 
   render() {
@@ -53,6 +81,7 @@ class Dogs extends React.Component {
         <div className="myFooter">
           <FooterComponent />
         </div>
+        <button onClick={this.populateDeck}>Create Deck of cards</button>
       </div>
     );
   }
@@ -60,16 +89,16 @@ class Dogs extends React.Component {
   createDogCardDecks = () => {
     let table = []
     let k = 0
-    for (let i = 0; i < fakeDogs.length; i++) {
+    for (let i = 0; i < dogResults.dogResults.length; i++) {
       let children = []
       for (let j = 0; j < 3; j++) {
-        if(fakeDogs[k])
+        if(dogResults.dogResults[k])
           children.push(<DogComponent 
             key={k} 
             dogsId={k} 
-            name={fakeDogs[k].name} 
-            age={fakeDogs[k].age} 
-            breed={fakeDogs[k].breed} image={fakeDogs[k].image}></DogComponent>)
+            name={dogResults.dogResults[k].NAME} 
+            age={dogResults.dogResults[k].AGE} 
+            breed={dogResults.dogResults[k].BREED} image={dogResults.dogResults[k].IMAGE}></DogComponent>)
         else
           children.push(<Card></Card>)
         k++
