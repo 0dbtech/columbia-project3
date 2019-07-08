@@ -14,27 +14,24 @@ let dogResults = [];
         console.log(shelterZipCodeArray);
       }
       console.log(shelterZipCodeArray);
-      shelterZipCodes = shelterZipCodeArray;
-      return shelterZipCodes;
-    }).then(    _callback
+      return shelterZipCodeArray;
+    }).then( _callback
     );
 }
 function getDogsByZip(zipcode) {
     axios.get('/details/shelterszip/' + zipcode).then(res => {
       console.log(res.data);
     dogs = res.data;
+    }).then(()=>{
    // dogResults = [];
-   for (var i = 0; i < res.data.length; i++) {
-     console.log(res.data[i]);
-     dogResults.push(res.data[i]);
+   for (var i = 0; i < dogs.length; i++) {
+     console.log(dogs[i]);
+     dogResults.push(dogs[i]);
    }
-   var dog = {
-     name: res.data.NAME,
-   }
-   var results = [];
-    dogResults.push(res.data);
+    dogResults.push(dogs);
     return dogs;
-});
+  })
 }
+  
 
  export default {getDogsByZip,getDogShelterZipCodes,shelterZipCodes, currentZip,dogResults};
