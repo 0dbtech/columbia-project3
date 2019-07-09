@@ -16,7 +16,7 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:8080/api/all').then(res => {
+    axios.get('/api/all').then(res => {
       for (var i = 0; i < res.data.length; i++) {
         shelterZipCodeArray.push(res.data[i].ZIPCODE.toString());
         console.log(shelterZipCodeArray);

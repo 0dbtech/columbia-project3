@@ -16,7 +16,7 @@ class LogIn extends Component {
   doLogIn(e) {
     e.preventDefault();
     console.log('sending')
-    axios.post('http://localhost:8080/api/login', {
+    axios.post('http://localhost:8000/api/login', {
       email: this.state.email,
       password: this.state.password
     }).then((data) => {

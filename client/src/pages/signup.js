@@ -15,7 +15,7 @@ class SignUp extends Component {
 
   doSignUp(e) {
     e.preventDefault();
-    axios.post('http://localhost:8080/api/signup', {
+    axios.post('http://localhost:8000/api/signup', {
       email: this.state.email,
       password: this.state.password
     }).then((user) => {
