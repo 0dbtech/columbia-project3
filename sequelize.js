@@ -2,8 +2,8 @@ const Sequelize = require('sequelize');
 const DogModel = require('./models/dog');
 const ShelterModel = require('./models/shelter');
 
-const sequelize = new Sequelize('Dogs', 'root', 'root', {
-  host: 'localhost',
+const sequelize = new Sequelize('ya7jghaj3co2sukf', 'b3koqx8p2xxaaow0', 'azn53rfw0nja56kc', {
+  host: 'localhumabrisfx8afs3ja.cbetxkdyhwsb.us-east-1.rds.amazonaws.com	ost',
   dialect: 'mysql',
   pool: {
     max: 100,
