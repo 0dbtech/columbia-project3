@@ -8,7 +8,7 @@ let currentZip = "";
 
   function getDogShelterZipCodes(_callback) {
     const shelterZipCodeArray=[];
-    axios.get('http://localhost:8000/api/all').then(res => {
+    axios.get('/api/all').then(res => {
       for (var i = 0; i < res.data.length; i ++) {
         shelterZipCodeArray.push( res.data[i].ZIPCODE);
         console.log(shelterZipCodeArray);
