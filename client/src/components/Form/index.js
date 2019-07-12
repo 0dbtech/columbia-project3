@@ -297,12 +297,23 @@ handleNameChange(event) {
 </Form>
 
   </div>
+  <div style={btnDivStyle}> 
+  <button className="saveBtn" onClick={this.handleSave}> Save </button>
+  <button className="saveBtn" onClick={this.handleCancel}> Cancel </button>
   </div>
-  <button onClick={this.handleSave}> Save </button>
-  <button onClick={this.handleCancel}> Cancel </button>
+  </div>
+  
     </>
     );
   }
+}
+const btnDivStyle = {
+  margin:'auto',
+  display: '-webkit-flex', /* Safari */
+  webkitAlignItems: 'center' ,/* Safari 7.0+ */
+  display: 'flex',
+  alignItems: 'center',
+  marginLeft:'100px'
 }
 
 export default ShelterForm;

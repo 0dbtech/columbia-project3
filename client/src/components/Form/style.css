@@ -11,8 +11,10 @@
   
   .form-page{
     background-color: white;
+    background-image: url('./bg.png');
     background-size: cover;
     background-position: center;
+    height:800PX;
   }
   
   .form-input{
