@@ -9,7 +9,12 @@ import Signup from "./pages/signup"
 import ShelterForm from "./components/Form"
 import API from './utils/API';
 class App extends Component {
-
+componentDidMount(){
+  fetch('/api/test/',res=>{
+    console.log(res);
+    console.log(res.data);
+  })
+}
   render() {
     console.log(API)
     return (

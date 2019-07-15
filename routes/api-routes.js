@@ -220,8 +220,10 @@ module.exports = function (app) {
             }).then(()=>{
              res.send({dogs});
             })
-     
           });
+          app.get('api/test/', res => {
+            res.json({dogs:"list of dogs"});
+          })
 
   app.post("/details/new/:entry", function (req, res) {
     db.dog.findAll({
