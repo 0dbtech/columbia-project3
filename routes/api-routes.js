@@ -259,56 +259,9 @@ module.exports = function (app) {
 
   app.get("/api/all", function (req, res) {
         db.dog.findAll({}).then(response => {
-          res.json(response)
+          res.json(response.data)
       });
     });
-
-
-  app.get("/details/zipcodes", function (req, res) {
-    //modify this to return desired data.
-    let SheltersRes= {
-      name:'Sheler ',
-      id:0,
-      zipcode:0,
-      phone:0
-    };
-    db.shelter.findAll({
-      }).then(shelters => {
-        let shelterdb = JSON.stringify(shelters);
-        let shelterObj = JSON.parse(shelterdb);
-        SheltersRes.zipcode = shelterObj[0].ZIPCODE;
-        console.log(SheltersRes);
-        }).then(()=>{
-         res.send({SheltersRes});
-        })
- 
-      });
-
-
-
-  app.get('/details/shelters/:ID', (req, res) => {
-    db.shelter.findAll({
-      where: {
-        ID:req.params.ID
-      }
-    }).then(shelters => {
-      let shelterdb = JSON.stringify(shelters);
-      let shelterObj = JSON.parse(shelterdb);
-     console.log(shelterObj);  
-    });
-  });
-
-  //Find dog by shelter zip code.
-  app.get('/details/shelterszip/:ZIPCODE', (req, res) => {
-    db.dog.findAll({
-      where: {
-        ZIPCODE:req.params.ZIPCODE
-      }
-    }).then(response => {
-     console.log(response);  
-     res.send(response)
-      });
-  });
 
   //Create a dog
   app.post('/admin/api/dogs', (req, res) => {
