@@ -22,6 +22,13 @@ class Home extends React.Component {
     fetch('api/dogsT')
     .then(response => response.json())
     .then(data => console.log(data));
+
+    fetch('api/all')
+    .then(response => response.json())
+    .then(data => this.setState({ data }));
+    fetch('api/all')
+    .then(response => response.json())
+    .then(data => console.log(data));
     
   };
 
