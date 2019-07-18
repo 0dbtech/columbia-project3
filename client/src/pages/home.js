@@ -16,9 +16,13 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    fetch('/api/dogsT').then(res => {
-      console.log(res);
-    })
+    fetch('api/dogsT')
+    .then(response => response.json())
+    .then(data => this.setState({ data }));
+    fetch('api/dogsT')
+    .then(response => response.json())
+    .then(data => console.log(data)));
+    
   };
 
 
